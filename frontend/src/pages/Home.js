@@ -145,9 +145,9 @@ export default function Home() {
                 Schedule a confidential consultation to explore how we can support your cross-border investment or M&A objectives.
               </p>
               <Link to="/contact">
-                <Button variant="secondary" data-testid="cta-button" className="bg-white text-primary hover:bg-white/90">
+                <button className="bg-secondary text-primary px-10 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-secondary/90 transition-colors" data-testid="cta-button">
                   Schedule Consultation
-                </Button>
+                </button>
               </Link>
             </motion.div>
           </div>
