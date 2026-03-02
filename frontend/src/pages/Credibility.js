@@ -28,14 +28,20 @@ export default function Credibility() {
     {
       name: 'Pepper Advantage Indonesia',
       description: 'Strategic partnership in financial advisory and investment structuring.',
+      website: 'https://pepper-global.com/our-network/pepper-indonesia/',
+      logoPlaceholder: 'PA'
     },
     {
       name: 'Capital Bridge Co., Ltd.',
       description: 'Cross-border transaction facilitation and market intelligence.',
+      website: 'https://www.capitalbridge.co.jp/en#Company-Info',
+      logoPlaceholder: 'CB'
     },
     {
       name: 'Nash Advisory',
       description: 'Legal and regulatory compliance collaboration.',
+      website: 'https://www.nashadvisory.com/en/',
+      logoPlaceholder: 'NA'
     },
   ];
 
