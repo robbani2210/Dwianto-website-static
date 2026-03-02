@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { Button } from '../components/Button';
+import { HeroCarousel } from '../components/HeroCarousel';
+import { StatsShowcase } from '../components/StatsShowcase';
+import { OwnerProfile } from '../components/OwnerProfile';
+import { SuccessStories } from '../components/SuccessStories';
 import { ServiceCard } from '../components/ServiceCard';
 import { TrendingUp, Globe, Scale } from 'lucide-react';
 
@@ -31,50 +34,8 @@ export default function Home() {
     <>
       <SEO />
       <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative h-screen flex items-center noise-texture" data-testid="hero-section">
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1562367072-fea5c7eb8748?crop=entropy&cs=srgb&fm=jpg&q=85)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'grayscale(20%) brightness(0.4)',
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70 z-0" />
-          
-          <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl"
-            >
-              <p className="text-xs uppercase tracking-[0.2em] font-semibold text-secondary mb-6" data-testid="hero-subtitle">
-                Strategic Capital Advisory
-              </p>
-              <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] mb-8" data-testid="hero-title">
-                Bridging Global Capital with Indonesian Opportunity
-              </h1>
-              <p className="text-lg md:text-xl leading-relaxed font-light text-white/90 mb-12 max-w-2xl" data-testid="hero-description">
-                Independent strategic advisory in M&A, capital structuring, and cross-border transactions. We engineer investments that strengthen enterprises and create sustainable value.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button variant="primary" data-testid="hero-cta-primary">
-                    Request Consultation
-                  </Button>
-                </Link>
-                <Link to="/about">
-                  <Button variant="secondary" data-testid="hero-cta-secondary" className="border-white text-white hover:bg-white hover:text-primary">
-                    Learn About Us
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Hero Carousel */}
+        <HeroCarousel />
 
         {/* Services Section */}
         <section className="py-24 md:py-32 bg-white" data-testid="services-section">
