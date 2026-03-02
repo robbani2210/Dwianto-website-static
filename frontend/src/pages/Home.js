@@ -10,6 +10,8 @@ import { ServiceCard } from '../components/ServiceCard';
 import { TrendingUp, Globe, Scale } from 'lucide-react';
 
 export default function Home() {
+  const { t } = useTranslation();
+  
   const services = [
     {
       title: 'Mergers & Acquisitions',
