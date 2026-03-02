@@ -24,42 +24,42 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-xs uppercase tracking-widest font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <nav className="space-y-2">
               <Link
                 to="/about"
                 data-testid="footer-link-about"
                 className="block text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
               >
-                About Us
+                {t('nav.about')}
               </Link>
               <Link
                 to="/services"
                 data-testid="footer-link-services"
                 className="block text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
               >
-                Services
+                {t('nav.services')}
               </Link>
               <Link
                 to="/credibility"
                 data-testid="footer-link-portfolio"
                 className="block text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
               >
-                Portfolio
+                {t('nav.portfolio')}
               </Link>
               <Link
                 to="/insights"
                 data-testid="footer-link-insights"
                 className="block text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
               >
-                Insights
+                {t('nav.insights')}
               </Link>
             </nav>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest font-semibold mb-4">Contact</h4>
+            <h4 className="text-xs uppercase tracking-widest font-semibold mb-4">{t('footer.contactTitle')}</h4>
             <div className="space-y-3">
               <a
                 href="mailto:info@dwiantocapital.com"
