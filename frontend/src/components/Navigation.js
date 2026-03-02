@@ -41,7 +41,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center" data-testid="nav-logo-link">
             <img
-              src="https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/g6ifpenl_logo.png"
+              src="https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/j1duk89l_logo%20%282%29.png"
               alt="Dwianto Capital Advisory"
               className="h-12 w-auto"
               data-testid="nav-logo"
