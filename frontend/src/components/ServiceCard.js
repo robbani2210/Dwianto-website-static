@@ -31,7 +31,7 @@ export const ServiceCard = ({ title, description, link, icon: Icon }) => {
         data-testid="service-card-link"
         className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors group"
       >
-        Learn More
+        {t('common.learnMore')}
         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
       </Link>
     </motion.div>
