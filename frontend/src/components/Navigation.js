@@ -38,8 +38,8 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-primary shadow-lg'
-          : 'bg-primary/95 backdrop-blur-md'
+          ? 'bg-[#d9d9d9] shadow-lg'
+          : 'bg-[#d9d9d9]'
       }`}
       data-testid="main-navigation"
     >
@@ -64,13 +64,13 @@ export const Navigation = () => {
                 className={`text-sm font-medium uppercase tracking-wider transition-colors ${
                   location.pathname === link.path
                     ? 'text-secondary'
-                    : 'text-white hover:text-secondary'
+                    : 'text-primary hover:text-secondary'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="text-white">
+            <div className="text-primary">
               <LanguageSwitcher />
             </div>
           </div>
@@ -78,7 +78,7 @@ export const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-primary"
             data-testid="mobile-menu-toggle"
             aria-label="Toggle menu"
           >
@@ -93,7 +93,7 @@ export const Navigation = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-primary border-t border-white/10"
+          className="lg:hidden bg-[#d9d9d9] border-t border-primary/10"
           data-testid="mobile-menu"
         >
           <div className="px-6 py-4 space-y-3">
@@ -106,7 +106,7 @@ export const Navigation = () => {
                 className={`block py-2 text-sm font-medium uppercase tracking-wider transition-colors ${
                   location.pathname === link.path
                     ? 'text-secondary'
-                    : 'text-white hover:text-secondary'
+                    : 'text-primary hover:text-secondary'
                 }`}
               >
                 {link.label}

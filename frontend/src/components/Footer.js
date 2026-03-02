@@ -15,10 +15,10 @@ export const Footer = () => {
               Dwianto Capital Advisory
             </h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed mb-4">
-              Strategic Advisory in M&A, Capital Structuring, and Cross-Border Transactions
+              {t('footer.tagline')}
             </p>
             <p className="text-xs text-primary-foreground/60" data-testid="footer-legal-name">
-              PT Dwianto Capital Advisory
+              {t('footer.legalName')}
             </p>
           </div>
 
