@@ -35,7 +35,7 @@ export default function Credibility() {
       name: 'Capital Bridge Co., Ltd.',
       description: 'Cross-border transaction facilitation and market intelligence.',
       website: 'https://www.capitalbridge.co.jp/en#Company-Info',
-      logo: 'https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/1qv5zuf8_capital-bridge-brand-logo.svg'
+      logo: 'https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/nyaquaz0_capital-bridge-brand-logo.png'
     },
     {
       name: 'Nash Advisory',
