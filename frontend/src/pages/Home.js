@@ -129,77 +129,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Credibility Section */}
-        <section className="py-24 md:py-32 bg-white" data-testid="credibility-section">
-          <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <p className="text-xs uppercase tracking-[0.2em] font-semibold text-secondary mb-4" data-testid="credibility-label">
-                Track Record
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight text-primary mb-6" data-testid="credibility-title">
-                Proven Cross-Border Expertise
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white border border-border/40 p-8 text-center"
-                data-testid="credibility-stat-1"
-              >
-                <div className="font-serif text-4xl font-medium text-primary mb-2">$15-20M</div>
-                <p className="text-sm uppercase tracking-widest text-muted-foreground">FDI Projects Facilitated</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-border/40 p-8 text-center"
-                data-testid="credibility-stat-2"
-              >
-                <div className="font-serif text-4xl font-medium text-primary mb-2">$30-40M</div>
-                <p className="text-sm uppercase tracking-widest text-muted-foreground">Acquisition Projects</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white border border-border/40 p-8 text-center"
-                data-testid="credibility-stat-3"
-              >
-                <div className="font-serif text-4xl font-medium text-primary mb-2">Multiple</div>
-                <p className="text-sm uppercase tracking-widest text-muted-foreground">Ongoing Cross-Border Mandates</p>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mt-12"
-            >
-              <Link to="/credibility">
-                <Button variant="secondary" data-testid="credibility-cta">
-                  View Our Portfolio
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
+        {/* CTA Section - Removed duplicate credibility section */}
         <section className="py-24 md:py-32 bg-primary text-white" data-testid="cta-section">
           <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 text-center">
             <motion.div
