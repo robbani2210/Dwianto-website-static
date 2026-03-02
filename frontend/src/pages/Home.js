@@ -103,10 +103,8 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="mt-8">
-                  <Link to="/about">
-                    <Button variant="link" data-testid="value-proposition-cta">
-                      Learn More About Our Approach →
-                    </Button>
+                  <Link to="/about" className="text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" data-testid="value-proposition-cta">
+                    Learn More About Our Approach →
                   </Link>
                 </div>
               </motion.div>
