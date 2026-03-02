@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 export const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-primary text-primary-foreground py-16 md:py-20" data-testid="footer">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
