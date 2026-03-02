@@ -140,14 +140,14 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-6" data-testid="cta-title">
-                Ready to Discuss Your Transaction?
+                {t('cta.title')}
               </h2>
               <p className="text-lg leading-relaxed font-light text-white/90 mb-8 max-w-2xl mx-auto" data-testid="cta-description">
-                Schedule a confidential consultation to explore how we can support your cross-border investment or M&A objectives.
+                {t('cta.description')}
               </p>
               <Link to="/contact">
                 <button className="bg-secondary text-primary px-10 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-secondary/90 transition-colors" data-testid="cta-button">
-                  Schedule Consultation
+                  {t('cta.button')}
                 </button>
               </Link>
             </motion.div>
