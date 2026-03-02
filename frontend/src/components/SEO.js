@@ -31,25 +31,25 @@ export const SEO = ({
 
       {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'ProfessionalService',
-          name: 'PT Dwianto Capital Advisory',
-          alternateName: 'Dwianto Capital Advisory',
-          description: description,
-          url: 'https://dwiantocapital.com',
-          logo: 'https://dwiantocapital.com/logo.png',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'South Jakarta',
-            addressCountry: 'ID',
-            streetAddress: 'Menara Prima',
+        {`{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "PT Dwianto Capital Advisory",
+          "alternateName": "Dwianto Capital Advisory",
+          "description": "${description}",
+          "url": "https://dwiantocapital.com",
+          "logo": "https://dwiantocapital.com/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "South Jakarta",
+            "addressCountry": "ID",
+            "streetAddress": "Menara Prima"
           },
-          email: 'info@dwiantocapital.com',
-          telephone: '+6285179587928',
-          areaServed: 'International',
-          serviceType: ['M&A Advisory', 'Cross-Border Investment', 'Legal & Financial Compliance'],
-        })}
+          "email": "info@dwiantocapital.com",
+          "telephone": "+6285179587928",
+          "areaServed": "International",
+          "serviceType": ["M&A Advisory", "Cross-Border Investment", "Legal & Financial Compliance"]
+        }`}
       </script>
     </Helmet>
   );
