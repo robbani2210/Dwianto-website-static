@@ -1,7 +1,6 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
-export const SEO = ({
-  title = 'Dwianto Capital Advisory - Strategic M&A and Cross-Border Investment',
+export const SEO = ({  title = 'Dwianto Capital Advisory - Strategic M&A and Cross-Border Investment',
   description = 'Independent strategic capital advisory firm specializing in M&A, capital structuring, and cross-border investment transactions for enterprises in Indonesia.',
   keywords = 'capital advisory Indonesia, M&A Indonesia, cross-border investment, PT PMA setup, foreign direct investment Indonesia',
   image = '/og-image.jpg',

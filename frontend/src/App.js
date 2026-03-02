@@ -1,6 +1,5 @@
 import '@/App.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
@@ -30,27 +29,25 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <div className="App">
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/mergers-acquisitions" element={<MergersAcquisitions />} />
-            <Route path="/services/cross-border-investment" element={<CrossBorderInvestment />} />
-            <Route path="/services/legal-compliance" element={<LegalCompliance />} />
-            <Route path="/credibility" element={<Credibility />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/insights/:slug" element={<BlogDetail />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </HelmetProvider>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="App">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/mergers-acquisitions" element={<MergersAcquisitions />} />
+          <Route path="/services/cross-border-investment" element={<CrossBorderInvestment />} />
+          <Route path="/services/legal-compliance" element={<LegalCompliance />} />
+          <Route path="/credibility" element={<Credibility />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/:slug" element={<BlogDetail />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
