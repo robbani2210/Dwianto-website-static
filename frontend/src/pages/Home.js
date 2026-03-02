@@ -72,6 +72,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Success Stories */}
+        <SuccessStories />
+
         {/* Value Proposition Section */}
         <section className="py-24 md:py-32 bg-muted" data-testid="value-proposition-section">
           <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
