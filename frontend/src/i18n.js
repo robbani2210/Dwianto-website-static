@@ -396,6 +396,9 @@ const resources = {
         text2: 'No solo conectamos partes. Preparamos a las empresas indonesias para cumplir con los estándares de inversores internacionales, curamos ambos lados de la transacción e ingenieramos estructuras que hacen exitosa la inversión transfronteriza.',
         text3: 'Nuestro marco integrado combina estructuración institucional, disciplina de gobernanza y ejecución transfronteriza, reduciendo el riesgo y aumentando la certeza en las transacciones del mercado indonesio.',
         cta: 'Conozca Más Sobre Nuestro Enfoque'
+      },
+      common: {
+        learnMore: 'Conocer Más'
       }
     }
   }
