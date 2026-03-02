@@ -14,20 +14,20 @@ export default function Home() {
   
   const services = [
     {
-      title: 'Mergers & Acquisitions',
-      description: 'Buy-side and sell-side advisory for cross-border M&A transactions involving Indonesian companies and foreign investors.',
+      title: t('services.ma.title'),
+      description: t('services.ma.description'),
       link: '/services/mergers-acquisitions',
       icon: TrendingUp,
     },
     {
-      title: 'Cross-Border Investment',
-      description: 'Strategic market entry solutions including PT PMA establishment and ownership structuring for foreign investors.',
+      title: t('services.crossBorder.title'),
+      description: t('services.crossBorder.description'),
       link: '/services/cross-border-investment',
       icon: Globe,
     },
     {
-      title: 'Legal & Financial Compliance',
-      description: 'Governance structuring and regulatory compliance advisory for investor-backed Indonesian companies.',
+      title: t('services.compliance.title'),
+      description: t('services.compliance.description'),
       link: '/services/legal-compliance',
       icon: Scale,
     },
