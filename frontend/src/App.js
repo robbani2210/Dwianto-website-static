@@ -1,4 +1,5 @@
 import '@/App.css';
+import './i18n';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
