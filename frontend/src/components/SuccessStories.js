@@ -34,6 +34,8 @@ const successStories = [
 ];
 
 export const SuccessStories = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-24 md:py-32 bg-muted" data-testid="success-stories-section">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
