@@ -43,7 +43,4 @@ export const SEO = ({  title = 'Dwianto Capital Advisory - Strategic M&A and Cro
   }, [fullTitle, description, keywords, image, url, type]);
 
   return null;
-  }, [fullTitle, description, keywords, image, url, type]);
-
-  return null;
 };
