@@ -47,20 +47,20 @@ export const SuccessStories = () => {
           className="mb-16"
         >
           <p className="text-secondary text-sm font-mono uppercase tracking-[0.3em] mb-4" data-testid="success-stories-label">
-            Case Studies
+            {t('successStories.label')}
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4" data-testid="success-stories-title">
-                Success Stories
+                {t('successStories.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl" data-testid="success-stories-description">
-                Representative transactions demonstrating our integrated advisory approach across M&A, market entry, and restructuring engagements.
+                {t('successStories.description')}
               </p>
             </div>
             <Link to="/credibility">
               <button className="flex items-center gap-2 px-6 py-3 bg-primary text-white text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-colors">
-                View All Cases
+                {t('successStories.viewAll')}
                 <ArrowRight size={16} />
               </button>
             </Link>
