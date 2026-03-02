@@ -8,23 +8,23 @@ import { useTranslation } from 'react-i18next';
 const slides = [
   {
     image: 'https://images.unsplash.com/photo-1770345743150-8d2bef3979e8?crop=entropy&cs=srgb&fm=jpg&q=85',
-    title: 'Strategic Advisory in M&A and Cross-Border Investment',
-    subtitle: 'Bridging Global Capital with Indonesian Opportunity',
-    cta: 'Explore Our Services',
+    titleKey: 'hero.slide1.title',
+    subtitleKey: 'hero.slide1.subtitle',
+    ctaKey: 'hero.slide1.cta',
     link: '/services'
   },
   {
     image: 'https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=srgb&fm=jpg&q=85',
-    title: 'Institutional Capital Structuring',
-    subtitle: 'Engineering Transactions That Create Sustainable Value',
-    cta: 'View Our Approach',
+    titleKey: 'hero.slide2.title',
+    subtitleKey: 'hero.slide2.subtitle',
+    ctaKey: 'hero.slide2.cta',
     link: '/about'
   },
   {
     image: 'https://images.unsplash.com/photo-1752159684779-0639174cdfac?crop=entropy&cs=srgb&fm=jpg&q=85',
-    title: 'Cross-Border Transaction Excellence',
-    subtitle: 'Navigating Complex Regulatory Frameworks with Precision',
-    cta: 'Discover Success Stories',
+    titleKey: 'hero.slide3.title',
+    subtitleKey: 'hero.slide3.subtitle',
+    ctaKey: 'hero.slide3.cta',
     link: '/credibility'
   }
 ];
