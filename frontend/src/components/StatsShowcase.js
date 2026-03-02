@@ -38,4 +38,58 @@ export const StatsShowcase = () => {
     backgroundPosition: 'center',
   };
 
-  return (\n    <section\n      className=\"relative py-24 md:py-32 overflow-hidden\"\n      style={sectionStyle}\n      data-testid=\"stats-showcase-section\"\n    >\n      {/* Dark Overlay */}\n      <div className=\"absolute inset-0 bg-primary/95\" />\n\n      <div className=\"relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24\">\n        <motion.div\n          initial={{ opacity: 0, y: 20 }}\n          whileInView={{ opacity: 1, y: 0 }}\n          viewport={{ once: true }}\n          transition={{ duration: 0.6 }}\n          className=\"text-center mb-16\"\n        >\n          <p className=\"text-secondary text-sm font-mono uppercase tracking-[0.3em] mb-4\" data-testid=\"stats-label\">\n            Our Track Record\n          </p>\n          <h2 className=\"font-serif text-4xl md:text-5xl font-bold text-white\" data-testid=\"stats-title\">\n            Proven Excellence in Capital Advisory\n          </h2>\n        </motion.div>\n\n        <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12\">\n          {stats.map((stat, index) => {\n            const Icon = stat.icon;\n            return (\n              <motion.div\n                key={index}\n                initial={{ opacity: 0, y: 30 }}\n                whileInView={{ opacity: 1, y: 0 }}\n                viewport={{ once: true }}\n                transition={{ duration: 0.6, delay: index * 0.1 }}\n                className=\"text-center\"\n                data-testid={`stat-card-${index}`}\n              >\n                <Icon className=\"text-secondary mx-auto mb-6\" size={48} strokeWidth={1.5} />\n                <div className=\"font-serif text-5xl md:text-6xl font-bold text-secondary mb-3\" data-testid={`stat-number-${index}`}>\n                  {stat.number}\n                </div>\n                <p className=\"text-white text-lg font-semibold mb-2\" data-testid={`stat-label-${index}`}>\n                  {stat.label}\n                </p>\n                <p className=\"text-white/70 text-sm\" data-testid={`stat-description-${index}`}>\n                  {stat.description}\n                </p>\n              </motion.div>\n            );\n          })}\n        </div>\n      </div>\n    </section>\n  );\n};
+  return (
+    <section
+      className="relative py-24 md:py-32 overflow-hidden"
+      style={sectionStyle}
+      data-testid="stats-showcase-section"
+    >
+      <div className="absolute inset-0 bg-primary/95" />
+
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="text-secondary text-sm font-mono uppercase tracking-[0.3em] mb-4" data-testid="stats-label">
+            Our Track Record
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white" data-testid="stats-title">
+            Proven Excellence in Capital Advisory
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+                data-testid={`stat-card-${index}`}
+              >
+                <Icon className="text-secondary mx-auto mb-6" size={48} strokeWidth={1.5} />
+                <div className="font-serif text-5xl md:text-6xl font-bold text-secondary mb-3" data-testid={`stat-number-${index}`}>
+                  {stat.number}
+                </div>
+                <p className="text-white text-lg font-semibold mb-2" data-testid={`stat-label-${index}`}>
+                  {stat.label}
+                </p>
+                <p className="text-white/70 text-sm" data-testid={`stat-description-${index}`}>
+                  {stat.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
