@@ -137,6 +137,23 @@ const resources = {
         learnMore: 'Learn More',
         visitWebsite: 'Visit Website'
       },
+      insights: {
+        label: 'Insights & Analysis',
+        title: 'Industry Insights',
+        description: 'Expert analysis, market intelligence, and strategic perspectives on cross-border investment, M&A transactions, and the Indonesian business landscape.',
+        seoTitle: 'Insights - Capital Advisory Analysis & Market Intelligence',
+        seoDescription: 'Expert insights on cross-border investment, M&A transactions, and the Indonesian market from Dwianto Capital Advisory.',
+        searchPlaceholder: 'Search articles...',
+        allCategories: 'All',
+        loading: 'Loading articles...',
+        noResults: 'No articles found matching your criteria.',
+        readArticle: 'Read Article',
+        backToInsights: 'Back to Insights',
+        notFound: 'Article Not Found',
+        minRead: 'min read',
+        by: 'By',
+        relatedTopics: 'Related Topics'
+      },
       about: {
         label: 'About Dwianto Capital Advisory',
         title: 'Independent Strategic Capital Advisory',
@@ -443,6 +460,23 @@ const resources = {
         learnMore: '\u0627\u0639\u0631\u0641 \u0627\u0644\u0645\u0632\u064a\u062f',
         visitWebsite: '\u0632\u064a\u0627\u0631\u0629 \u0627\u0644\u0645\u0648\u0642\u0639'
       },
+      insights: {
+        label: '\u0631\u0624\u0649 \u0648\u062a\u062d\u0644\u064a\u0644\u0627\u062a',
+        title: '\u0631\u0624\u0649 \u0627\u0644\u0635\u0646\u0627\u0639\u0629',
+        description: '\u062a\u062d\u0644\u064a\u0644\u0627\u062a \u062e\u0628\u064a\u0631\u0629 \u0648\u0627\u0633\u062a\u062e\u0628\u0627\u0631\u0627\u062a \u0627\u0644\u0633\u0648\u0642 \u0648\u0648\u062c\u0647\u0627\u062a \u0646\u0638\u0631 \u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u062d\u0648\u0644 \u0627\u0644\u0627\u0633\u062a\u062b\u0645\u0627\u0631 \u0639\u0628\u0631 \u0627\u0644\u062d\u062f\u0648\u062f \u0648\u0645\u0639\u0627\u0645\u0644\u0627\u062a \u0627\u0644\u0627\u0646\u062f\u0645\u0627\u062c \u0648\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630.',
+        seoTitle: '\u0631\u0624\u0649 - \u062a\u062d\u0644\u064a\u0644\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0627\u0644\u0631\u0623\u0633\u0645\u0627\u0644\u064a\u0629',
+        seoDescription: '\u0631\u0624\u0649 \u062e\u0628\u064a\u0631\u0629 \u062d\u0648\u0644 \u0627\u0644\u0627\u0633\u062a\u062b\u0645\u0627\u0631 \u0639\u0628\u0631 \u0627\u0644\u062d\u062f\u0648\u062f \u0648\u0627\u0644\u0627\u0646\u062f\u0645\u0627\u062c \u0648\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u0641\u064a \u0627\u0644\u0633\u0648\u0642 \u0627\u0644\u0625\u0646\u062f\u0648\u0646\u064a\u0633\u064a.',
+        searchPlaceholder: '\u0627\u0628\u062d\u062b \u0641\u064a \u0627\u0644\u0645\u0642\u0627\u0644\u0627\u062a...',
+        allCategories: '\u0627\u0644\u0643\u0644',
+        loading: '\u062c\u0627\u0631\u064a \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0645\u0642\u0627\u0644\u0627\u062a...',
+        noResults: '\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0645\u0642\u0627\u0644\u0627\u062a.',
+        readArticle: '\u0627\u0642\u0631\u0623 \u0627\u0644\u0645\u0642\u0627\u0644',
+        backToInsights: '\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0631\u0624\u0649',
+        notFound: '\u0627\u0644\u0645\u0642\u0627\u0644 \u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f',
+        minRead: '\u062f\u0642\u064a\u0642\u0629 \u0644\u0644\u0642\u0631\u0627\u0621\u0629',
+        by: '\u0628\u0642\u0644\u0645',
+        relatedTopics: '\u0645\u0648\u0627\u0636\u064a\u0639 \u0630\u0627\u062a \u0635\u0644\u0629'
+      },
       about: {
         label: '\u0639\u0646 Dwianto Capital Advisory',
         title: '\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0631\u0623\u0633\u0645\u0627\u0644\u064a\u0629 \u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u0645\u0633\u062a\u0642\u0644\u0629',
@@ -683,6 +717,23 @@ const resources = {
         cta: '\u4e86\u89e3\u66f4\u591a\u5173\u4e8e\u6211\u4eec\u7684\u65b9\u6cd5'
       },
       common: { learnMore: '\u4e86\u89e3\u66f4\u591a', visitWebsite: '\u8bbf\u95ee\u7f51\u7ad9' },
+      insights: {
+        label: '\u89c1\u89e3\u4e0e\u5206\u6790',
+        title: '\u884c\u4e1a\u89c1\u89e3',
+        description: '\u5173\u4e8e\u8de8\u5883\u6295\u8d44\u3001\u5e76\u8d2d\u4ea4\u6613\u548c\u5370\u5c3c\u5546\u4e1a\u73af\u5883\u7684\u4e13\u5bb6\u5206\u6790\u3001\u5e02\u573a\u60c5\u62a5\u548c\u6218\u7565\u89c6\u89d2\u3002',
+        seoTitle: '\u89c1\u89e3 - \u8d44\u672c\u54a8\u8be2\u5206\u6790\u4e0e\u5e02\u573a\u60c5\u62a5',
+        seoDescription: '\u6765\u81eaDwianto Capital Advisory\u7684\u8de8\u5883\u6295\u8d44\u548c\u5e76\u8d2d\u4e13\u5bb6\u89c1\u89e3\u3002',
+        searchPlaceholder: '\u641c\u7d22\u6587\u7ae0...',
+        allCategories: '\u5168\u90e8',
+        loading: '\u6b63\u5728\u52a0\u8f7d\u6587\u7ae0...',
+        noResults: '\u672a\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u6587\u7ae0\u3002',
+        readArticle: '\u9605\u8bfb\u6587\u7ae0',
+        backToInsights: '\u8fd4\u56de\u89c1\u89e3',
+        notFound: '\u6587\u7ae0\u672a\u627e\u5230',
+        minRead: '\u5206\u949f\u9605\u8bfb',
+        by: '\u4f5c\u8005',
+        relatedTopics: '\u76f8\u5173\u4e3b\u9898'
+      },
       about: {
         label: '\u5173\u4e8eDwianto Capital Advisory',
         title: '\u72ec\u7acb\u6218\u7565\u8d44\u672c\u54a8\u8be2',
@@ -889,6 +940,23 @@ const resources = {
         cta: 'Conozca M\u00e1s Sobre Nuestro Enfoque'
       },
       common: { learnMore: 'Conocer M\u00e1s', visitWebsite: 'Visitar Sitio Web' },
+      insights: {
+        label: 'Perspectivas y An\u00e1lisis',
+        title: 'Perspectivas de la Industria',
+        description: 'An\u00e1lisis experto, inteligencia de mercado y perspectivas estrat\u00e9gicas sobre inversi\u00f3n transfronteriza, fusiones y adquisiciones, y el panorama empresarial indonesio.',
+        seoTitle: 'Perspectivas - An\u00e1lisis de Asesor\u00eda de Capital',
+        seoDescription: 'Perspectivas expertas sobre inversi\u00f3n transfronteriza y fusiones y adquisiciones de Dwianto Capital Advisory.',
+        searchPlaceholder: 'Buscar art\u00edculos...',
+        allCategories: 'Todos',
+        loading: 'Cargando art\u00edculos...',
+        noResults: 'No se encontraron art\u00edculos.',
+        readArticle: 'Leer Art\u00edculo',
+        backToInsights: 'Volver a Perspectivas',
+        notFound: 'Art\u00edculo No Encontrado',
+        minRead: 'min de lectura',
+        by: 'Por',
+        relatedTopics: 'Temas Relacionados'
+      },
       about: {
         label: 'Acerca de Dwianto Capital Advisory',
         title: 'Asesor\u00eda de Capital Estrat\u00e9gica Independiente',

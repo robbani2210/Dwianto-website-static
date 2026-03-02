@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { useLanguagePath } from '../hooks/useLanguagePath';
 
 export const BlogCard = ({ blog, index }) => {
+  const { t } = useTranslation();
+  const lp = useLanguagePath();
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -40,7 +45,7 @@ export const BlogCard = ({ blog, index }) => {
           </span>
         </div>
         <h3 className="font-serif text-2xl font-normal mb-3 text-primary group-hover:text-secondary transition-colors" data-testid="blog-card-title">
-          <Link to={`/insights/${blog.slug}`}>
+          <Link to={lp(`/insights/${blog.slug}`)}>
             {blog.title}
           </Link>
         </h3>
@@ -48,11 +53,11 @@ export const BlogCard = ({ blog, index }) => {
           {blog.excerpt}
         </p>
         <Link
-          to={`/insights/${blog.slug}`}
+          to={lp(`/insights/${blog.slug}`)}
           data-testid="blog-card-read-more"
           className="text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors"
         >
-          Read Article →
+          {t('insights.readArticle')} &rarr;
         </Link>
       </div>
     </motion.article>

@@ -1,46 +1,72 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
+import { stripLangPrefix, VALID_LANGS } from '../hooks/useLanguagePath';
 
-export const SEO = ({  title = 'Dwianto Capital Advisory - Strategic M&A and Cross-Border Investment',
+const BASE_URL = 'https://dwiantocapital.com';
+
+export const SEO = ({
+  title = 'Dwianto Capital Advisory - Strategic M&A and Cross-Border Investment',
   description = 'Independent strategic capital advisory firm specializing in M&A, capital structuring, and cross-border investment transactions for enterprises in Indonesia.',
   keywords = 'capital advisory Indonesia, M&A Indonesia, cross-border investment, PT PMA setup, foreign direct investment Indonesia',
   image = '/og-image.jpg',
-  url = 'https://dwiantocapital.com',
   type = 'website',
 }) => {
+  const { i18n } = useTranslation();
+  const location = useLocation();
   const fullTitle = title.includes('Dwianto') ? title : `${title} | Dwianto Capital Advisory`;
+  const pathWithoutLang = stripLangPrefix(location.pathname);
 
   useEffect(() => {
-    // Update title
     document.title = fullTitle;
-    
-    // Update meta tags
-    const updateMetaTag = (name, content, isProperty = false) => {
-      const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-      let element = document.querySelector(selector);
-      if (!element) {
-        element = document.createElement('meta');
-        if (isProperty) {
-          element.setAttribute('property', name);
-        } else {
-          element.setAttribute('name', name);
-        }
-        document.head.appendChild(element);
+    document.documentElement.lang = i18n.language || 'en';
+
+    const updateMeta = (name, content, isProperty = false) => {
+      const attr = isProperty ? 'property' : 'name';
+      const selector = `meta[${attr}="${name}"]`;
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
       }
-      element.setAttribute('content', content);
+      el.setAttribute('content', content);
     };
-    
-    updateMetaTag('description', description);
-    updateMetaTag('keywords', keywords);
-    updateMetaTag('og:title', fullTitle, true);
-    updateMetaTag('og:description', description, true);
-    updateMetaTag('og:type', type, true);
-    updateMetaTag('og:url', url, true);
-    updateMetaTag('og:image', image, true);
-    updateMetaTag('twitter:card', 'summary_large_image');
-    updateMetaTag('twitter:title', fullTitle);
-    updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', image);
-  }, [fullTitle, description, keywords, image, url, type]);
+
+    updateMeta('description', description);
+    updateMeta('keywords', keywords);
+    updateMeta('og:title', fullTitle, true);
+    updateMeta('og:description', description, true);
+    updateMeta('og:type', type, true);
+    updateMeta('og:url', `${BASE_URL}/${i18n.language}${pathWithoutLang === '/' ? '' : pathWithoutLang}`, true);
+    updateMeta('og:image', image, true);
+    updateMeta('og:locale', i18n.language, true);
+    updateMeta('twitter:card', 'summary_large_image');
+    updateMeta('twitter:title', fullTitle);
+    updateMeta('twitter:description', description);
+
+    // hreflang tags
+    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
+    existingHreflangs.forEach((el) => el.remove());
+
+    VALID_LANGS.forEach((lang) => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = lang;
+      link.href = `${BASE_URL}/${lang}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
+      document.head.appendChild(link);
+    });
+
+    const xDefault = document.createElement('link');
+    xDefault.rel = 'alternate';
+    xDefault.hreflang = 'x-default';
+    xDefault.href = `${BASE_URL}/en${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
+    document.head.appendChild(xDefault);
+
+    return () => {
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+    };
+  }, [fullTitle, description, keywords, image, type, i18n.language, pathWithoutLang]);
 
   return null;
 };

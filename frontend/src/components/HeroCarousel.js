@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLanguagePath } from '../hooks/useLanguagePath';
 
 const slides = [
   {
@@ -31,6 +32,7 @@ const slides = [
 
 export const HeroCarousel = () => {
   const { t } = useTranslation();
+  const lp = useLanguagePath();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -84,7 +86,7 @@ export const HeroCarousel = () => {
                       <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8" data-testid="hero-title">
                         {t(slide.titleKey)}
                       </h1>
-                      <Link to={slide.link}>
+                      <Link to={lp(slide.link)}>
                         <button
                           className="bg-secondary text-primary px-10 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-secondary/90 transition-all duration-300"
                           data-testid="hero-cta"

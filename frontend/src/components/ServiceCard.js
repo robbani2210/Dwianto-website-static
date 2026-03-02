@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useLanguagePath } from '../hooks/useLanguagePath';
 
 export const ServiceCard = ({ title, description, link, icon: Icon }) => {
   const { t } = useTranslation();
+  const lp = useLanguagePath();
   
   return (
     <motion.div
@@ -27,7 +29,7 @@ export const ServiceCard = ({ title, description, link, icon: Icon }) => {
         {description}
       </p>
       <Link
-        to={link}
+        to={lp(link)}
         data-testid="service-card-link"
         className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors group"
       >

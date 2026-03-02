@@ -2,11 +2,13 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Building2, Globe2, Scale } from 'lucide-react';
+import { useLanguagePath } from '../hooks/useLanguagePath';
 
 const storyIcons = [Globe2, Building2, Scale];
 
 export const SuccessStories = () => {
   const { t } = useTranslation();
+  const lp = useLanguagePath();
 
   const stories = ['s1', 's2', 's3'].map((key, i) => ({
     icon: storyIcons[i],
@@ -32,7 +34,7 @@ export const SuccessStories = () => {
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4" data-testid="success-stories-title">{t('successStories.title')}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl" data-testid="success-stories-description">{t('successStories.description')}</p>
             </div>
-            <Link to="/credibility">
+            <Link to={lp('/credibility')}>
               <button className="flex items-center gap-2 px-6 py-3 bg-primary text-white text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-colors">
                 {t('successStories.viewAll')}
                 <ArrowRight size={16} />

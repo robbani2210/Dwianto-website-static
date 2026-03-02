@@ -8,9 +8,11 @@ import { OwnerProfile } from '../components/OwnerProfile';
 import { SuccessStories } from '../components/SuccessStories';
 import { ServiceCard } from '../components/ServiceCard';
 import { TrendingUp, Globe, Scale } from 'lucide-react';
+import { useLanguagePath } from '../hooks/useLanguagePath';
 
 export default function Home() {
   const { t } = useTranslation();
+  const lp = useLanguagePath();
   
   const services = [
     {
@@ -106,7 +108,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="mt-8">
-                  <Link to="/about" className="text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" data-testid="value-proposition-cta">
+                  <Link to={lp('/about')} className="text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" data-testid="value-proposition-cta">
                     {t('valueProposition.cta')} →
                   </Link>
                 </div>
@@ -145,7 +147,7 @@ export default function Home() {
               <p className="text-lg leading-relaxed font-light text-white/90 mb-8 max-w-2xl mx-auto" data-testid="cta-description">
                 {t('cta.description')}
               </p>
-              <Link to="/contact">
+              <Link to={lp('/contact')}>
                 <button className="bg-secondary text-primary px-10 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-secondary/90 transition-colors" data-testid="cta-button">
                   {t('cta.button')}
                 </button>
