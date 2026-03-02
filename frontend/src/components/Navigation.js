@@ -36,7 +36,7 @@ export const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-[#2A2A2A] shadow-lg' : 'bg-[#2A2A2A]'
+        isScrolled ? 'bg-primary shadow-lg' : 'bg-primary'
       }`}
       data-testid="main-navigation"
     >
@@ -44,7 +44,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <Link to={lp('/')} className="flex items-center" data-testid="nav-logo-link">
             <img
-              src="https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/j1duk89l_logo%20%282%29.png"
+              src="https://customer-assets.emergentagent.com/job_0287b672-8f9e-4fe4-bd6c-7155d54ad100/artifacts/lcyh975m_a9c81fbd-2709-459a-a9ba-0226c80d4f25-removebg-preview.png"
               alt="Dwianto Capital Advisory"
               className="h-12 w-auto"
               data-testid="nav-logo"
@@ -85,7 +85,7 @@ export const Navigation = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-[#2A2A2A] border-t border-white/10"
+          className="lg:hidden bg-primary border-t border-white/10"
           data-testid="mobile-menu"
         >
           <div className="px-6 py-4 space-y-3">
