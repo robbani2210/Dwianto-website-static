@@ -79,17 +79,17 @@ export const HeroCarousel = () => {
                       className="max-w-3xl"
                     >
                       <p className="text-secondary text-sm font-mono uppercase tracking-[0.3em] mb-6" data-testid="hero-subtitle">
-                        {slide.subtitle}
+                        {t(slide.subtitleKey)}
                       </p>
                       <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8" data-testid="hero-title">
-                        {slide.title}
+                        {t(slide.titleKey)}
                       </h1>
                       <Link to={slide.link}>
                         <button
                           className="bg-secondary text-primary px-10 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-secondary/90 transition-all duration-300"
                           data-testid="hero-cta"
                         >
-                          {slide.cta}
+                          {t(slide.ctaKey)}
                         </button>
                       </Link>
                     </motion.div>
