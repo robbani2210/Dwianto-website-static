@@ -143,12 +143,24 @@ export default function Credibility() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-muted/50 border border-border/40 p-8 text-center"
+                  className="bg-white border border-border/40 p-8 text-center hover:border-secondary/50 transition-colors"
                   data-testid={`partner-card-${index}`}
                 >
-                  <Award className="text-secondary mx-auto mb-4" size={32} strokeWidth={1.5} />
+                  <div className="mb-6 flex items-center justify-center">
+                    <div className="w-24 h-24 bg-muted flex items-center justify-center border border-border">
+                      <span className="text-2xl font-bold text-primary">{partner.logoPlaceholder}</span>
+                    </div>
+                  </div>
                   <h3 className="font-serif text-xl font-normal text-primary mb-3">{partner.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{partner.description}</p>
+                  <a 
+                    href={partner.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-xs uppercase tracking-wider text-secondary hover:underline"
+                  >
+                    Visit Website →
+                  </a>
                 </motion.div>
               ))}
             </div>
