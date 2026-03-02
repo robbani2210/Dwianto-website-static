@@ -41,12 +41,12 @@ export const Navigation = () => {
       data-testid="main-navigation"
     >
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-22 py-3">
           <Link to={lp('/')} className="flex items-center" data-testid="nav-logo-link">
             <img
               src="https://customer-assets.emergentagent.com/job_0287b672-8f9e-4fe4-bd6c-7155d54ad100/artifacts/lcyh975m_a9c81fbd-2709-459a-a9ba-0226c80d4f25-removebg-preview.png"
               alt="Dwianto Capital Advisory"
-              className="h-12 w-auto"
+              className="h-14 md:h-16 w-auto"
               data-testid="nav-logo"
             />
           </Link>
