@@ -101,7 +101,7 @@ export const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <p className="text-xs text-primary-foreground/60 text-center" data-testid="footer-copyright">
-            © {new Date().getFullYear()} PT Dwianto Capital Advisory. All rights reserved.
+            © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
         </div>
       </div>
