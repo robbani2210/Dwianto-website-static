@@ -89,25 +89,25 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <p className="text-xs uppercase tracking-[0.2em] font-semibold text-secondary mb-4" data-testid="value-proposition-label">
-                  What Makes Us Different
+                  {t('valueProposition.label')}
                 </p>
                 <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight text-primary mb-6" data-testid="value-proposition-title">
-                  Strategic Partner, Not Just Advisor
+                  {t('valueProposition.title')}
                 </h2>
                 <div className="space-y-6 text-muted-foreground leading-relaxed">
                   <p data-testid="value-proposition-text-1">
-                    Indonesia offers growth potential, but businesses lack capital, technology, and readiness to scale. Global investors lack local market intelligence and structured entry pathways.
+                    {t('valueProposition.text1')}
                   </p>
                   <p data-testid="value-proposition-text-2">
-                    We don't just connect parties. We prepare Indonesian companies to meet international investor standards, curate both sides of the transaction, and engineer structures that make cross-border investment succeed.
+                    {t('valueProposition.text2')}
                   </p>
                   <p data-testid="value-proposition-text-3">
-                    Our integrated framework combines institutional structuring, governance discipline, and cross-border execution—reducing risk and increasing certainty in Indonesia market deals.
+                    {t('valueProposition.text3')}
                   </p>
                 </div>
                 <div className="mt-8">
                   <Link to="/about" className="text-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" data-testid="value-proposition-cta">
-                    Learn More About Our Approach →
+                    {t('valueProposition.cta')} →
                   </Link>
                 </div>
               </motion.div>
