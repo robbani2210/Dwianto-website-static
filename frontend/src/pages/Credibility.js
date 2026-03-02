@@ -29,19 +29,19 @@ export default function Credibility() {
       name: 'Pepper Advantage Indonesia',
       description: 'Strategic partnership in financial advisory and investment structuring.',
       website: 'https://pepper-global.com/our-network/pepper-indonesia/',
-      logoPlaceholder: 'PA'
+      logo: 'https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/xdqngl5a_logo-pepper.svg'
     },
     {
       name: 'Capital Bridge Co., Ltd.',
       description: 'Cross-border transaction facilitation and market intelligence.',
       website: 'https://www.capitalbridge.co.jp/en#Company-Info',
-      logoPlaceholder: 'CB'
+      logo: 'https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/1qv5zuf8_capital-bridge-brand-logo.svg'
     },
     {
       name: 'Nash Advisory',
       description: 'Legal and regulatory compliance collaboration.',
       website: 'https://www.nashadvisory.com/en/',
-      logoPlaceholder: 'NA'
+      logo: 'https://customer-assets.emergentagent.com/job_global-advisory-9/artifacts/8f6z0vpf_logo%20nash.png'
     },
   ];
 
