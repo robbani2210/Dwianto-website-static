@@ -143,13 +143,16 @@ export default function Credibility() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-border/40 p-8 text-center hover:border-secondary/50 transition-colors"
+                  className="bg-white border border-border/40 p-8 text-center hover:border-secondary/50 transition-all duration-300"
                   data-testid={`partner-card-${index}`}
                 >
-                  <div className="mb-6 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-muted flex items-center justify-center border border-border">
-                      <span className="text-2xl font-bold text-primary">{partner.logoPlaceholder}</span>
-                    </div>
+                  <div className="mb-6 flex items-center justify-center h-24">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-h-full max-w-[200px] object-contain"
+                      data-testid={`partner-logo-${index}`}
+                    />
                   </div>
                   <h3 className="font-serif text-xl font-normal text-primary mb-3">{partner.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{partner.description}</p>
@@ -158,6 +161,7 @@ export default function Credibility() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-xs uppercase tracking-wider text-secondary hover:underline"
+                    data-testid={`partner-website-${index}`}
                   >
                     Visit Website →
                   </a>
