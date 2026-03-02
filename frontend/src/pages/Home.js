@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO } from '../components/SEO';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { StatsShowcase } from '../components/StatsShowcase';
