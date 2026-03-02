@@ -54,13 +54,13 @@ export default function Home() {
               className="mb-16"
             >
               <p className="text-xs uppercase tracking-[0.2em] font-semibold text-secondary mb-4" data-testid="services-section-label">
-                Our Services
+                {t('services.label')}
               </p>
               <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight text-primary mb-6" data-testid="services-section-title">
-                Integrated Advisory Framework
+                {t('services.title')}
               </h2>
               <p className="text-lg md:text-xl leading-relaxed font-light text-muted-foreground max-w-3xl" data-testid="services-section-description">
-                We combine financial modeling, governance structuring, regulatory navigation, and negotiation strategy into one disciplined approach.
+                {t('services.description')}
               </p>
             </motion.div>
 
