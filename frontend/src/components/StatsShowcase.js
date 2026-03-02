@@ -6,26 +6,26 @@ const stats = [
   {
     icon: TrendingUp,
     number: '20+',
-    label: 'Years of Combined Experience',
-    description: 'Deep expertise across international markets'
+    labelKey: 'stats.experience',
+    descriptionKey: 'stats.experienceDesc'
   },
   {
     icon: Briefcase,
     number: '$50M+',
-    label: 'Transaction Value',
-    description: 'Successfully closed deals and mandates'
+    labelKey: 'stats.transaction',
+    descriptionKey: 'stats.transactionDesc'
   },
   {
     icon: Globe,
     number: '15+',
-    label: 'Cross-Border Mandates',
-    description: 'Active international engagements'
+    labelKey: 'stats.mandates',
+    descriptionKey: 'stats.mandatesDesc'
   },
   {
     icon: Users,
     number: '30+',
-    label: 'Institutional Clients',
-    description: 'Corporations, PE firms, and family offices'
+    labelKey: 'stats.clients',
+    descriptionKey: 'stats.clientsDesc'
   }
 ];
 
@@ -55,10 +55,10 @@ export const StatsShowcase = () => {
           className="text-center mb-16"
         >
           <p className="text-secondary text-sm font-mono uppercase tracking-[0.3em] mb-4" data-testid="stats-label">
-            Our Track Record
+            {t('stats.label')}
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white" data-testid="stats-title">
-            Proven Excellence in Capital Advisory
+            {t('stats.title')}
           </h2>
         </motion.div>
 
@@ -80,10 +80,10 @@ export const StatsShowcase = () => {
                   {stat.number}
                 </div>
                 <p className="text-white text-lg font-semibold mb-2" data-testid={`stat-label-${index}`}>
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </p>
                 <p className="text-white/70 text-sm" data-testid={`stat-description-${index}`}>
-                  {stat.description}
+                  {t(stat.descriptionKey)}
                 </p>
               </motion.div>
             );
