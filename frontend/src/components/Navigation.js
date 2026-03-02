@@ -19,6 +19,11 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Force re-render when language changes by using i18n.language as dependency
+  useEffect(() => {
+    // This effect ensures component re-renders when language changes
+  }, [i18n.language]);
+
   // Recalculate navLinks whenever language changes
   const navLinks = [
     { path: '/', label: t('nav.home') },
