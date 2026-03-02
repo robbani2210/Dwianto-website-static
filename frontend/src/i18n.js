@@ -96,6 +96,9 @@ const resources = {
         text2: 'We don\'t just connect parties. We prepare Indonesian companies to meet international investor standards, curate both sides of the transaction, and engineer structures that make cross-border investment succeed.',
         text3: 'Our integrated framework combines institutional structuring, governance discipline, and cross-border execution—reducing risk and increasing certainty in Indonesia market deals.',
         cta: 'Learn More About Our Approach'
+      },
+      common: {
+        learnMore: 'Learn More'
       }
     }
   },
