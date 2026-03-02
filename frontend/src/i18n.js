@@ -88,6 +88,14 @@ const resources = {
         quickLinks: 'Quick Links',
         contactTitle: 'Contact',
         copyright: 'PT Dwianto Capital Advisory. All rights reserved.'
+      },
+      valueProposition: {
+        label: 'What Makes Us Different',
+        title: 'Strategic Partner, Not Just Advisor',
+        text1: 'Indonesia offers growth potential, but businesses lack capital, technology, and readiness to scale. Global investors lack local market intelligence and structured entry pathways.',
+        text2: 'We don\'t just connect parties. We prepare Indonesian companies to meet international investor standards, curate both sides of the transaction, and engineer structures that make cross-border investment succeed.',
+        text3: 'Our integrated framework combines institutional structuring, governance discipline, and cross-border execution—reducing risk and increasing certainty in Indonesia market deals.',
+        cta: 'Learn More About Our Approach'
       }
     }
   },
