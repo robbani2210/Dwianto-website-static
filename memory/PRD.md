@@ -1,5 +1,38 @@
 # Dwianto Capital Advisory - Product Requirements Document
 
+## Static HTML Version (Feb 2026)
+A fully static, production-ready HTML/CSS/JS version of the site has been generated at `/app/static-site/`.
+Download as `/app/static-site.zip`. See file structure below.
+
+### Static Site Files
+```
+static-site/
+├── index.html          (Home — Hero, Stats, Owner, Services, Stories, CTA)
+├── about.html          (About — Who We Are, Problem/Solution, Vision, Values)
+├── services.html       (Services — 3 service cards, Why Choose Us)
+├── credibility.html    (Portfolio — Track Record, Partner Logos)
+├── insights.html       (Insights — 6 static blog cards with search/filter)
+├── contact.html        (Contact — Form + Info panel)
+└── assets/
+    ├── css/style.css   (Full design system, all breakpoints, 618 lines)
+    ├── js/script.js    (Nav, carousel, animations, filter, form — 253 lines)
+    └── images/README.md (Instructions to download images for local hosting)
+```
+
+### Static Site Features
+- Zero framework dependencies (pure HTML5/CSS3/ES6)
+- Hero carousel with auto-play, prev/next, touch swipe
+- Scroll-triggered animations via IntersectionObserver
+- Blog category filter + search (vanilla JS)
+- Contact form with validation + success state
+- Language switcher UI (links to future WP lang pages)
+- Full SEO meta tags + OG tags + JSON-LD schema on index
+- WordPress-ready clean semantic body structure
+- FontAwesome 6 + Google Fonts (Playfair Display, Manrope, JetBrains Mono)
+- Fully responsive (mobile, tablet, desktop)
+
+
+
 ## Original Problem Statement
 Premium, modern, SEO-optimized company profile website for "Dwianto Capital Advisory" - a global capital advisory firm. Design should be minimalist luxury with white, navy, and gold accent palette, referencing protemus.id style.
 
