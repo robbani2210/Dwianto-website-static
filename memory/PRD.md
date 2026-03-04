@@ -4,7 +4,18 @@
 A fully static, production-ready HTML/CSS/JS version of the site has been generated at `/app/static-site/`.
 Download as `/app/static-site.zip`. See file structure below.
 
-### Static Site Files
+### Static Site v2 Updates (Feb 2026)
+**Color Theme:** Changed from navy blue (`#0B1C3E`) to rich dark gold (`#7B5C23`) + warm ivory backgrounds
+**6 Article Detail Pages added** in `/insights/` subdirectory:
+- `how-to-structure-pt-pma.html`
+- `ma-due-diligence-southeast-asia.html`
+- `indonesia-investment-outlook-2025.html`
+- `legal-compliance-foreign-companies-indonesia.html`
+- `capital-structuring-indonesia-market-entry.html`
+- `corporate-governance-cross-border-ma.html`
+Each with: full article prose, sidebar author box + CTA, related articles grid, JSON-LD schema, breadcrumb nav.
+
+
 ```
 static-site/
 ├── index.html          (Home — Hero, Stats, Owner, Services, Stories, CTA)
