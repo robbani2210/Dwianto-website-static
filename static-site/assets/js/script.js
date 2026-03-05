@@ -1,12 +1,12 @@
 /* ===========================================
    DWIANTO CAPITAL ADVISORY — script.js
-   All interactivity for the static website
    =========================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
   initNavigation();
   initHeroCarousel();
   initScrollAnimations();
+  initStatsCounter();
   initBlogFilter();
   initContactForm();
   initLangSwitcher();
@@ -14,29 +14,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ============================================
-   1. NAVIGATION — scroll shadow + mobile menu
+   1. NAVIGATION
    ============================================ */
 function initNavigation() {
-  var header = document.getElementById('site-header');
-  var toggle = document.getElementById('mob-toggle');
-  var mobMenu = document.getElementById('mob-menu');
+  var nav    = document.getElementById('site-header');
+  /* article pages have old IDs — fall back gracefully */
+  var toggle = document.getElementById('nav-toggle') || document.getElementById('mob-toggle');
+  var mobile = document.getElementById('nav-mobile') || document.getElementById('mob-menu');
 
-  if (header) {
+  if (nav) {
     window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+      /* article pages: nav is nested inside header — toggle on inner .site-nav too */
+      var innerNav = nav.tagName === 'HEADER' ? nav.querySelector('.site-nav') : null;
+      if (innerNav) innerNav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
   }
 
-  if (toggle && mobMenu) {
+  if (toggle && mobile) {
     toggle.addEventListener('click', function () {
       toggle.classList.toggle('open');
-      mobMenu.classList.toggle('open');
+      mobile.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(mobile.classList.contains('open')));
     });
-    // Close when a link inside is clicked
-    mobMenu.querySelectorAll('a').forEach(function (link) {
+    mobile.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         toggle.classList.remove('open');
-        mobMenu.classList.remove('open');
+        mobile.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
@@ -47,9 +52,10 @@ function initNavigation() {
    ============================================ */
 function markActiveNavLink() {
   var current = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mob-menu a').forEach(function (a) {
+  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (a) {
     var href = a.getAttribute('href') || '';
-    if (href === current || (current === '' && href === 'index.html')) {
+    var base = href.split('/').pop();
+    if (base === current || (current === '' && base === 'index.html')) {
       a.classList.add('active');
     }
   });
@@ -83,17 +89,13 @@ function initHeroCarousel() {
   show(0);
   start();
 
-  if (prev) {
-    prev.addEventListener('click', function () { stop(); show(current - 1); start(); });
-  }
-  if (next) {
-    next.addEventListener('click', function () { stop(); show(current + 1); start(); });
-  }
+  if (prev) prev.addEventListener('click', function () { stop(); show(current - 1); start(); });
+  if (next) next.addEventListener('click', function () { stop(); show(current + 1); start(); });
+
   dots.forEach(function (dot, i) {
     dot.addEventListener('click', function () { stop(); show(i); start(); });
   });
 
-  // Touch / swipe support
   var track = document.querySelector('.hero-track');
   if (track) {
     var startX = 0;
@@ -106,29 +108,61 @@ function initHeroCarousel() {
 }
 
 /* ============================================
-   4. SCROLL ANIMATIONS (IntersectionObserver)
+   4. SCROLL REVEAL ANIMATIONS
    ============================================ */
 function initScrollAnimations() {
-  var els = document.querySelectorAll('.anim');
+  var els = document.querySelectorAll('.reveal');
   if (!els.length) return;
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('revealed');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(function (el) { io.observe(el); });
 }
 
 /* ============================================
-   5. BLOG FILTER — insights page
+   5. ANIMATED STATS COUNTER
+   ============================================ */
+function initStatsCounter() {
+  var counters = document.querySelectorAll('.stat-cell__num[data-target]');
+  if (!counters.length) return;
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el       = entry.target;
+      var target   = parseInt(el.getAttribute('data-target'), 10);
+      var prefix   = el.getAttribute('data-prefix') || '';
+      var suffix   = el.getAttribute('data-suffix') || '';
+      var duration = 1800;
+      var startTime = null;
+
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var ease     = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.floor(ease * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach(function (c) { io.observe(c); });
+}
+
+/* ============================================
+   6. BLOG FILTER
    ============================================ */
 function initBlogFilter() {
-  var catBtns = document.querySelectorAll('.cat-btn');
+  var catBtns = document.querySelectorAll('.filter-pill');
   var search  = document.getElementById('blog-search');
   var cards   = document.querySelectorAll('.blog-card');
 
@@ -140,19 +174,17 @@ function initBlogFilter() {
   function filter() {
     var visible = 0;
     cards.forEach(function (card) {
-      var cat     = (card.getAttribute('data-category') || '').toLowerCase();
-      var title   = (card.querySelector('.blog-title')   || {}).textContent || '';
-      var excerpt = (card.querySelector('.blog-excerpt') || {}).textContent || '';
-      var inCat   = activeCategory === 'all' || cat === activeCategory.toLowerCase();
+      var cat      = (card.getAttribute('data-category') || '').toLowerCase();
+      var title    = (card.querySelector('.blog-card__title') || {}).textContent || '';
+      var excerpt  = (card.querySelector('.blog-card__excerpt') || {}).textContent || '';
+      var inCat    = activeCategory === 'all' || cat === activeCategory.toLowerCase();
       var inSearch = !searchTerm ||
         title.toLowerCase().includes(searchTerm) ||
         excerpt.toLowerCase().includes(searchTerm);
-
       var show = inCat && inSearch;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-
     var noRes = document.getElementById('no-results');
     if (noRes) noRes.style.display = visible === 0 ? 'block' : 'none';
   }
@@ -175,10 +207,10 @@ function initBlogFilter() {
 }
 
 /* ============================================
-   6. CONTACT FORM
+   7. CONTACT FORM
    ============================================ */
 function initContactForm() {
-  var form    = document.getElementById('contact-form');
+  var form = document.getElementById('contact-form');
   if (!form) return;
 
   var submitBtn = form.querySelector('.btn-submit');
@@ -187,43 +219,24 @@ function initContactForm() {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    // Basic validation
     var name  = form.querySelector('[name="name"]');
     var email = form.querySelector('[name="email"]');
     var msg   = form.querySelector('[name="message"]');
 
     if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
-      if (errorBox) {
-        errorBox.textContent = 'Please fill in all required fields.';
-        errorBox.style.display = 'block';
-      }
+      if (errorBox) { errorBox.textContent = 'Please fill in all required fields.'; errorBox.style.display = 'block'; }
       return;
     }
-
     if (errorBox) errorBox.style.display = 'none';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting\u2026'; }
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting…';
-    }
-
-    /* -----------------------------------------------
-       WordPress integration: replace this timeout
-       with a fetch/AJAX call to your WP REST endpoint
-       or Contact Form 7 / Gravity Forms action.
-    ----------------------------------------------- */
     setTimeout(function () {
       form.style.display = 'none';
       if (successEl) successEl.style.display = 'block';
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Inquiry';
-      }
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Inquiry'; }
     }, 1200);
   });
 
-  // Reset
   var resetBtn = document.getElementById('form-reset');
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
@@ -236,18 +249,20 @@ function initContactForm() {
 }
 
 /* ============================================
-   7. LANGUAGE SWITCHER DROPDOWN
+   8. LANGUAGE SWITCHER
    ============================================ */
 function initLangSwitcher() {
-  var trigger  = document.querySelector('.lang-btn');
-  var dropdown = document.querySelector('.lang-dropdown');
+  var trigger  = document.querySelector('.nav-lang-btn') || document.querySelector('.lang-btn');
+  var dropdown = document.querySelector('.nav-lang-drop') || document.querySelector('.lang-dropdown');
   if (!trigger || !dropdown) return;
 
   trigger.addEventListener('click', function (e) {
     e.stopPropagation();
     dropdown.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(dropdown.classList.contains('open')));
   });
   document.addEventListener('click', function () {
     dropdown.classList.remove('open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
   });
 }

@@ -18,188 +18,208 @@
 </head>
 <body class="page-about">
 
-  <!-- HEADER -->
-  <header class="site-header" id="site-header">
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav" id="site-header" aria-label="Main navigation">
     <div class="container">
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Dwianto Capital Advisory — Home">
           <img src="https://customer-assets.emergentagent.com/job_0287b672-8f9e-4fe4-bd6c-7155d54ad100/artifacts/lcyh975m_a9c81fbd-2709-459a-a9ba-0226c80d4f25-removebg-preview.png"
-               alt="Dwianto Capital Advisory" width="160" height="56">
+               alt="Dwianto Capital Advisory" height="46">
         </a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html" class="active">About</a>
-          <a href="services.html">Services</a>
-          <a href="credibility.html">Portfolio</a>
-          <a href="insights.html">Insights</a>
-          <a href="contact.html">Contact</a>
-          <div class="lang-switcher">
-            <button class="lang-btn">&#127468;&#127463; EN &#9662;</button>
-            <div class="lang-dropdown">
-              <a href="#">&#127468;&#127463; English</a>
-              <a href="#">&#127462;&#127466; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
-              <a href="#">&#127464;&#127475; &#20013;&#25991;</a>
-              <a href="#">&#127466;&#127480; Espa&#241;ol</a>
-            </div>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="credibility.html">Portfolio</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang">
+          <button class="nav-lang-btn" aria-haspopup="true" aria-expanded="false">
+            EN <i class="fas fa-chevron-down fa-xs"></i>
+          </button>
+          <div class="nav-lang-drop" role="menu">
+            <a href="#" role="menuitem">English</a>
+            <a href="#" role="menuitem">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+            <a href="#" role="menuitem">&#20013;&#25991;</a>
+            <a href="#" role="menuitem">Espa&#241;ol</a>
           </div>
         </div>
-        <button class="mob-toggle" id="mob-toggle" aria-label="Toggle mobile menu">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
-      </nav>
+      </div>
     </div>
-    <div class="mob-menu" id="mob-menu">
+    <div class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
       <div class="container">
-        <div class="mob-menu-inner">
+        <div class="nav-mobile-inner">
           <a href="index.html">Home</a>
           <a href="about.html" class="active">About</a>
           <a href="services.html">Services</a>
           <a href="credibility.html">Portfolio</a>
           <a href="insights.html">Insights</a>
           <a href="contact.html">Contact</a>
-          <div class="mob-langs">
-            <a href="#" class="active">EN</a><a href="#">AR</a><a href="#">ZH</a><a href="#">ES</a>
+          <div class="nav-mobile-langs">
+            <a href="#" class="active">EN</a>
+            <a href="#">AR</a>
+            <a href="#">ZH</a>
+            <a href="#">ES</a>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <main id="main-content">
 
-    <!-- Page Hero -->
-    <section class="page-hero bg-white">
+    <!-- ===== PAGE HERO ===== -->
+    <header class="page-hero page-hero--dark">
       <div class="container">
-        <div class="page-hero-inner anim">
-          <span class="section-label">About Dwianto Capital Advisory</span>
-          <h1 class="page-title">Independent Strategic Capital Advisory</h1>
-          <p class="section-desc">We specialize in M&amp;A, capital structuring, and cross-border investment transactions for enterprises. Our integrated approach combines financial modeling, governance structuring, regulatory navigation, and negotiation strategy.</p>
+        <div class="page-hero__inner reveal">
+          <span class="label label--light">Who We Are</span>
+          <h1 class="heading heading--light heading--lg">Independent Capital Advisory for Indonesia's Most Complex Transactions</h1>
+          <p class="desc desc--light">We bridge the gap between global capital and Indonesian opportunity — with the local intelligence and institutional discipline to close.</p>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- Who We Are -->
-    <section class="section bg-muted">
+    <!-- ===== WHO WE ARE ===== -->
+    <section class="section" aria-labelledby="about-heading">
       <div class="container">
-        <div class="who-grid">
-          <div class="who-img anim from-left">
-            <img src="https://images.unsplash.com/photo-1758518727707-b023e285b709?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
-                 alt="Business discussion at Dwianto Capital Advisory" loading="lazy">
+        <div class="grid-2">
+          <div class="about-img-wrap reveal from-left">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+                 alt="Modern business architecture representing Dwianto Capital Advisory" loading="lazy">
+            <div class="about-img-caption">Est. 2022</div>
           </div>
-          <div class="who-text anim from-right d2">
-            <h2 class="section-title">Who We Are</h2>
-            <p>Dwianto Capital Advisory is an independent strategic capital advisory firm providing integrated legal and financial execution for companies entering or expanding in the Indonesian market.</p>
-            <p>We specialize in Foreign Direct Investment, business acquisitions, and capital raises, executing intricate ownership restructures that align international capital with local opportunity.</p>
-            <p>Our approach is distinctive: we don't just introduce parties. We prepare Indonesian companies to meet international investor standards, curate both sides of the transaction, and manage the entire process to completion.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Core Challenge -->
-    <section class="section bg-white">
-      <div class="container">
-        <div class="anim" style="max-width:760px;margin:0 auto 4rem;text-align:center;">
-          <span class="section-label">The Core Challenge</span>
-          <h2 class="section-title">Bridging the Indonesia Investment Gap</h2>
-        </div>
-        <div class="prob-grid">
-          <div class="prob-card anim d1">
-            <i class="fas fa-users prob-icon" aria-hidden="true"></i>
-            <h3>For Global Investors</h3>
-            <p>Indonesia offers growth potential, but investors lack local market intelligence, reliable partners, and structured entry pathways. Regulatory complexity and governance uncertainty create execution risk.</p>
-          </div>
-          <div class="prob-card anim d2">
-            <i class="fas fa-bolt prob-icon" aria-hidden="true"></i>
-            <h3>For Indonesian Companies</h3>
-            <p>Businesses have growth ambitions but lack capital, technology, and readiness to scale. Meeting international investor standards requires governance frameworks and financial discipline they haven't developed.</p>
-          </div>
-        </div>
-        <div class="solution-box anim">
-          <h3>Our Solution</h3>
-          <p>We bridge this gap with an integrated advisory framework that prepares companies, structures transactions, navigates regulations, and aligns stakeholder incentives — creating structured, transparent capital inflows that strengthen enterprises.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision & Mission -->
-    <section class="section bg-muted">
-      <div class="container">
-        <div class="vm-grid">
-          <div class="anim from-left">
-            <i class="fas fa-eye vm-icon" aria-hidden="true"></i>
-            <h2 class="vm-title">Our Vision</h2>
-            <p class="vm-text">To become a leading cross-border advisory firm that institutionalizes foreign direct investment into Indonesia, strengthening governance, capital discipline, and long-term enterprise growth.</p>
-          </div>
-          <div class="anim from-right d2">
-            <i class="fas fa-bullseye vm-icon" aria-hidden="true"></i>
-            <h2 class="vm-title">Our Mission</h2>
-            <ul class="mission-list">
-              <li>Facilitate structured and transparent capital inflows into Indonesia</li>
-              <li>Prepare domestic companies to meet international investor standards</li>
-              <li>Design and execute cross-border transactions with governance integrity and execution certainty</li>
-            </ul>
+          <div class="about-text reveal from-right delay-1">
+            <span class="label">About</span>
+            <h2 class="heading" id="about-heading">Built for the Intersection of Global Capital and Indonesian Growth</h2>
+            <p>Dwianto Capital Advisory is an independent strategic advisory firm with a single focus: helping foreign investors and Indonesian businesses navigate the intersection of capital, regulation, and commercial opportunity in the Indonesian market.</p>
+            <h3>A Different Kind of Advisory</h3>
+            <p>Unlike large generalist firms, we work on a select number of mandates at any given time. That means full partner-level attention to every transaction — from initial structuring through final close. We don't hand files to junior associates.</p>
+            <h3>Our Unique Position</h3>
+            <p>We operate at the intersection of legal expertise, financial structuring, and regulatory intelligence. This integrated capability allows us to identify and resolve transaction risks before they become deal-breaking issues.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Values -->
-    <section class="section bg-white">
+    <!-- ===== PROBLEM / SOLUTION ===== -->
+    <section class="section section--navy" aria-labelledby="problem-heading">
       <div class="container">
-        <div class="anim" style="text-align:center;margin-bottom:4rem;">
-          <span class="section-label">Core Values</span>
-          <h2 class="section-title">What Guides Our Work</h2>
+        <div class="section-intro text-center reveal" style="max-width:680px;margin:0 auto 4rem;">
+          <span class="label label--light">The Challenge</span>
+          <h2 class="heading heading--light" id="problem-heading">Why Indonesia Demands Specialized Advisory</h2>
         </div>
-        <div class="values-grid">
-          <div class="val-card anim d1">
-            <i class="fas fa-crosshairs val-icon" aria-hidden="true"></i>
-            <h3>Precision</h3>
-            <p>We approach every structure and negotiation with analytical rigor and attention to detail.</p>
+        <div class="grid-2">
+          <div class="reveal">
+            <div class="rule"></div>
+            <h3 class="heading heading--light" style="font-size:1.5rem;margin-bottom:1.25rem;">The Problem</h3>
+            <p class="desc desc--light">Indonesia offers exceptional growth potential, but foreign investors consistently face the same barriers: fragmented regulatory requirements, opaque local ownership rules, and limited access to investment-ready counterparties. Local businesses, meanwhile, lack the governance frameworks and capital structures required to attract sophisticated institutional investors.</p>
           </div>
-          <div class="val-card anim d2">
-            <i class="fas fa-shield-halved val-icon" aria-hidden="true"></i>
-            <h3>Integrity</h3>
-            <p>We maintain independence, confidentiality, and ethical discipline in all engagements.</p>
-          </div>
-          <div class="val-card anim d3">
-            <i class="fas fa-chart-line val-icon" aria-hidden="true"></i>
-            <h3>Strategic Alignment</h3>
-            <p>We design transactions where all stakeholders' incentives are balanced for mutual success.</p>
-          </div>
-          <div class="val-card anim d4">
-            <i class="fas fa-trophy val-icon" aria-hidden="true"></i>
-            <h3>Long-Term Value</h3>
-            <p>We prioritize sustainable partnerships and enterprise growth over short-term deal-making.</p>
+          <div class="reveal delay-1">
+            <div class="rule"></div>
+            <h3 class="heading heading--light" style="font-size:1.5rem;margin-bottom:1.25rem;">Our Solution</h3>
+            <p class="desc desc--light">We solve both sides of this equation simultaneously. We prepare Indonesian companies to meet international investor standards while providing foreign capital with structured, de-risked entry pathways. Our integrated framework — combining legal expertise, financial modeling, and regulatory navigation — reduces friction and increases transaction certainty.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section cta-section">
+    <!-- ===== VISION & MISSION ===== -->
+    <section class="section section--cream" aria-labelledby="vision-heading">
       <div class="container">
-        <div class="anim" style="max-width:700px;margin:0 auto;text-align:center;">
-          <h2 class="section-title on-dark">Ready to Discuss Your Transaction?</h2>
-          <p class="section-desc on-dark" style="margin:0 auto 2.5rem;">Schedule a confidential consultation with our advisory team.</p>
-          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+        <div class="section-intro text-center reveal" style="max-width:600px;margin:0 auto 4rem;">
+          <span class="label">Direction</span>
+          <h2 class="heading" id="vision-heading">Vision &amp; Mission</h2>
+        </div>
+        <div class="grid-2">
+          <div class="reveal">
+            <span class="label">Vision</span>
+            <h3 class="heading" style="font-size:1.75rem;margin-bottom:1.25rem;">The Preferred Advisory Partner for Indonesia's Strategic Transactions</h3>
+            <p class="desc">To be the most trusted independent capital advisory firm for complex cross-border transactions involving Indonesia — recognized for our rigor, our discretion, and our ability to close.</p>
+          </div>
+          <div class="reveal delay-1">
+            <span class="label">Mission</span>
+            <h3 class="heading" style="font-size:1.75rem;margin-bottom:1.25rem;">Delivering Institutional Discipline to Every Mandate</h3>
+            <p class="desc">To provide foreign investors and Indonesian businesses with fully integrated advisory services that combine legal precision, financial sophistication, and on-the-ground market intelligence — enabling transactions that create sustainable value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CORE VALUES ===== -->
+    <section class="section" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-intro text-center reveal" style="max-width:580px;margin:0 auto 4rem;">
+          <span class="label">Foundation</span>
+          <h2 class="heading" id="values-heading">Core Values</h2>
+        </div>
+        <div class="grid-3">
+          <div class="reveal">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Rigor</h3>
+            <p class="desc" style="font-size:0.9rem;">Every analysis is stress-tested. Every structure is challenged. We do not proceed until we are confident the transaction architecture is sound.</p>
+          </div>
+          <div class="reveal delay-1">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Discretion</h3>
+            <p class="desc" style="font-size:0.9rem;">Our clients share sensitive information with us. We treat that trust as the foundation of every engagement. Confidentiality is non-negotiable.</p>
+          </div>
+          <div class="reveal delay-2">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Alignment</h3>
+            <p class="desc" style="font-size:0.9rem;">We succeed when our clients succeed. Our business model is built around long-term relationships and outcomes-based engagements — not hourly billing.</p>
+          </div>
+          <div class="reveal delay-1">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Clarity</h3>
+            <p class="desc" style="font-size:0.9rem;">We translate complex regulatory and financial landscapes into clear, actionable guidance. We do not hide behind jargon.</p>
+          </div>
+          <div class="reveal delay-2">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Independence</h3>
+            <p class="desc" style="font-size:0.9rem;">We have no conflicting mandates, no proprietary capital to deploy, and no incentive other than delivering the best outcome for our clients.</p>
+          </div>
+          <div class="reveal delay-3">
+            <div class="rule"></div>
+            <h3 class="heading" style="font-size:1.25rem;margin-bottom:0.85rem;">Execution</h3>
+            <p class="desc" style="font-size:0.9rem;">Advisory is only as valuable as its results. We remain engaged through transaction close — coordinating all parties to ensure completion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="reveal text-center" style="max-width:680px;margin:0 auto;">
+          <span class="label label--light">Get Started</span>
+          <h2 class="heading heading--light">Explore How We Can Support Your Objectives</h2>
+          <p class="desc desc--light" style="margin:0 auto 2.5rem;">Whether you are entering Indonesia for the first time or optimizing an existing investment, we can help.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn--gold">Schedule Consultation <i class="fas fa-arrow-right"></i></a>
+            <a href="services.html" class="btn btn--ghost">Our Services</a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-main">
         <div>
           <p class="footer-brand">Dwianto Capital Advisory</p>
-          <p class="footer-tagline">Strategic Advisory in M&amp;A, Capital Structuring, and Cross-Border Transactions</p>
+          <p class="footer-desc">Strategic Advisory in M&amp;A, Capital Structuring, and Cross-Border Transactions</p>
           <p class="footer-legal">PT Dwianto Capital Advisory</p>
         </div>
         <div>
-          <p class="footer-col-h">Quick Links</p>
-          <ul class="footer-links">
+          <p class="footer-col-title">Quick Links</p>
+          <ul class="footer-nav" role="list">
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="credibility.html">Portfolio</a></li>
@@ -208,14 +228,27 @@
           </ul>
         </div>
         <div>
-          <p class="footer-col-h">Contact</p>
-          <div class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:info@dwiantocapital.com">info@dwiantocapital.com</a></div>
-          <div class="footer-contact-item"><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/6285179587928">+62 851-7958-7928</a></div>
-          <div class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Menara Prima, South Jakarta, Indonesia</span></div>
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-row">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:info@dwiantocapital.com">info@dwiantocapital.com</a>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <a href="https://wa.me/6285179587928" target="_blank" rel="noopener noreferrer">+62 851-7958-7928</a>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Menara Prima, South Jakarta, Indonesia</span>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">&copy; <span id="year"></span> PT Dwianto Capital Advisory. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/6285179587928" class="footer-social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </footer>

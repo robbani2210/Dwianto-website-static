@@ -1,113 +1,82 @@
-# Dwianto Capital Advisory - Product Requirements Document
-
-## Static HTML Version (Feb 2026)
-A fully static, production-ready HTML/CSS/JS version of the site has been generated at `/app/static-site/`.
-Download as `/app/static-site.zip`. See file structure below.
-
-### Static Site v2 Updates (Feb 2026)
-**Color Theme:** Changed from navy blue (`#0B1C3E`) to rich dark gold (`#7B5C23`) + warm ivory backgrounds
-**6 Article Detail Pages added** in `/insights/` subdirectory:
-- `how-to-structure-pt-pma.html`
-- `ma-due-diligence-southeast-asia.html`
-- `indonesia-investment-outlook-2025.html`
-- `legal-compliance-foreign-companies-indonesia.html`
-- `capital-structuring-indonesia-market-entry.html`
-- `corporate-governance-cross-border-ma.html`
-Each with: full article prose, sidebar author box + CTA, related articles grid, JSON-LD schema, breadcrumb nav.
-
-
-```
-static-site/
-├── index.html          (Home — Hero, Stats, Owner, Services, Stories, CTA)
-├── about.html          (About — Who We Are, Problem/Solution, Vision, Values)
-├── services.html       (Services — 3 service cards, Why Choose Us)
-├── credibility.html    (Portfolio — Track Record, Partner Logos)
-├── insights.html       (Insights — 6 static blog cards with search/filter)
-├── contact.html        (Contact — Form + Info panel)
-└── assets/
-    ├── css/style.css   (Full design system, all breakpoints, 618 lines)
-    ├── js/script.js    (Nav, carousel, animations, filter, form — 253 lines)
-    └── images/README.md (Instructions to download images for local hosting)
-```
-
-### Static Site Features
-- Zero framework dependencies (pure HTML5/CSS3/ES6)
-- Hero carousel with auto-play, prev/next, touch swipe
-- Scroll-triggered animations via IntersectionObserver
-- Blog category filter + search (vanilla JS)
-- Contact form with validation + success state
-- Language switcher UI (links to future WP lang pages)
-- Full SEO meta tags + OG tags + JSON-LD schema on index
-- WordPress-ready clean semantic body structure
-- FontAwesome 6 + Google Fonts (Playfair Display, Manrope, JetBrains Mono)
-- Fully responsive (mobile, tablet, desktop)
-
-
+# Dwianto Capital Advisory — PRD
 
 ## Original Problem Statement
-Premium, modern, SEO-optimized company profile website for "Dwianto Capital Advisory" - a global capital advisory firm. Design should be minimalist luxury with white, navy, and gold accent palette, referencing protemus.id style.
+The user wants to redesign and simplify the existing website into a **premium minimalist company profile website**, outputting pure static HTML, CSS, and Vanilla JavaScript.
+
+## Product Requirements
+- **Output**: Static HTML, CSS, and JS only. No frameworks (React, Node.js) or build tools. Must run by opening `index.html`.
+- **Design Style**: Minimalist premium corporate style. Navy + Gold theme. Large whitespace, elegant typography, subtle animations.
+- **Navigation**: Sticky navbar with deep professional blue background and white text. Logo + menu items: Home, About, Services, Portfolio, Insights, Contact. Mobile responsive.
+- **Layout**: Section-based homepage: Hero carousel, Stats bar, Owner Profile, Services preview, Portfolio/Success Stories, Insights preview, CTA, Footer.
+- **Interactivity**: Smooth scroll, fade-in reveal on scroll, animated stat counters, hero carousel, mobile menu, language switcher dropdown, blog filter + search.
+- **Performance & SEO**: Optimized images, lightweight code, mobile-first, semantic HTML, proper heading hierarchy, meta tags.
+- **File Structure**: Clean separation — 6 main pages + `/insights/` blog articles + `/assets/css/`, `/assets/js/`, `/assets/images/`.
+
+## Architecture
+
+```
+/app/static-site/
+├── index.html          # Homepage — Hero + Stats + Owner + Services + Portfolio + Insights + CTA
+├── about.html          # About — Who We Are + Problem/Solution + Vision/Mission + Values
+├── services.html       # Services — M&A + Cross-Border + Legal/Compliance + Why Choose Us
+├── credibility.html    # Portfolio — Stats + 6 Cases + Partners
+├── insights.html       # Blog listing — Filter pills + Search + 6 Blog cards
+├── contact.html        # Contact — Form + Info panel
+└── assets/
+    ├── css/style.css   # 1450+ line comprehensive CSS system (navy/gold, BEM classes)
+    ├── js/script.js    # Navigation, carousel, scroll reveal, stats counter, filter, form, lang switcher
+    └── images/
+└── insights/           # 6 Blog article pages (use CSS backwards-compat aliases)
+    ├── how-to-structure-pt-pma.html
+    ├── ma-due-diligence-southeast-asia.html
+    ├── indonesia-investment-outlook-2025.html
+    ├── legal-compliance-foreign-companies-indonesia.html
+    ├── capital-structuring-indonesia-market-entry.html
+    └── corporate-governance-cross-border-ma.html
+```
 
 ## Tech Stack
-- **Frontend**: React, Tailwind CSS, react-router-dom, react-i18next, framer-motion, react-helmet
-- **Backend**: FastAPI, Motor (async MongoDB)
-- **Database**: MongoDB
+- **HTML5**: Semantic markup, SEO meta tags, JSON-LD schema on homepage
+- **CSS3**: 1450+ lines, CSS variables, BEM class system, CSS Grid + Flexbox, animations
+- **Vanilla JS**: 250+ lines, no dependencies, ES5 compatible
+- **Fonts**: Playfair Display (headings) + Manrope (body) + JetBrains Mono (labels)
+- **Icons**: Font Awesome 6.5.1 CDN
+- **Images**: Unsplash CDN + customer-hosted assets
 
-## Pages & Structure
-- Homepage (Hero Carousel, Stats, Owner Profile, Services, Success Stories, Value Proposition, CTA)
-- About Us (Who We Are, Problem/Solution, Vision/Mission, Core Values)
-- Services (M&A, Cross-Border Investment, Legal & Financial Compliance)
-- Credibility/Portfolio (Track Record, Strategic Partners)
-- Insights/Blog (10 SEO blog articles served from MongoDB - multilingual)
-- Contact (Form + Contact Info - functional backend)
+## What's Been Implemented (Feb 2026)
 
-## What's Been Implemented
+### Phase 1 — Static Conversion (Superseded)
+- Converted original React/FastAPI app to static HTML
 
-### Core Features
-- Full-stack app (React + FastAPI + MongoDB)
-- All pages and components created per requirements
-- Website redesigned to match protemus.id reference
-- Owner Profile, Stats Showcase, Success Stories, Hero Carousel components
-- Main company logo + 3 partner logos integrated
-- Backend API + database seeding for 10 blog posts
+### Phase 2 — Golden White Theme (Superseded)
+- Implemented dark gold (#7B5C23) + ivory color scheme
 
-### Navigation & UI (Feb 2026)
-- Navigation bar: deep charcoal (#2A2A2A) background with white text, gold hover states
-- Language switcher: clean circular flag icons (flagcdn.com) with minimal dropdown
-- All navigation links fully translated in 4 languages
+### Phase 3 — Premium Minimalist Redesign (COMPLETE ✅)
+- **Complete CSS rewrite**: 1450-line design system with navy (#0B1C3E) + gold (#C5A059) palette, CSS variables, BEM-style classes, responsive grid system, reveal animations, hero carousel mechanics
+- **Complete HTML rebuild** of all 6 main pages using new CSS class system
+- **script.js update**: Navigation, hero carousel, scroll reveal, animated stats counters, blog filter + search, contact form validation, language switcher, backwards-compatible fallbacks for blog article pages
+- **CSS backwards-compat aliases**: Old class names aliased in CSS so 6 blog article pages render correctly without HTML changes
+- **100% test pass rate**: All 30+ scenarios tested by testing agent
 
-### Internationalization (Feb 2026)
-- Full i18n translation for ALL pages in 4 languages (EN, AR, ZH, ES)
-- Language-based URL routing: /en/about, /ar/insights, /zh/contact, etc.
-- SEO hreflang tags for all pages and languages
-- All internal links include language prefix
+## CSS Class System (Key Classes)
+| Component | Class |
+|-----------|-------|
+| Navbar | `.site-nav`, `.nav-inner`, `.nav-links`, `.nav-lang`, `.nav-toggle`, `.nav-mobile` |
+| Hero | `.hero`, `.hero__bg`, `.hero__overlay`, `.hero__content`, `.hero__eyebrow`, `.hero__title` |
+| Stats | `.stats-bar`, `.stats-bar__grid`, `.stat-cell`, `.stat-cell__num`, `.stat-cell__label` |
+| Owner | `.owner-section`, `.owner-grid`, `.owner-img-frame`, `.owner-title`, `.cred-item` |
+| Services | `.service-cards`, `.service-card`, `.svc__icon`, `.svc__title`, `.svc__desc` |
+| Portfolio | `.portfolio-grid`, `.portfolio-card`, `.port-badge`, `.port-title`, `.port-footer` |
+| Insights | `.insights-grid`, `.insight-card`, `.blog-grid`, `.blog-card`, `.blog-card__img` |
+| Contact | `.contact-wrap`, `.contact-items`, `.form-box`, `.form-group`, `.form-input` |
+| Animations | `.reveal`, `.reveal.revealed`, `.reveal.from-left`, `.reveal.delay-1` |
+| Footer | `.site-footer`, `.footer-main`, `.footer-col-title`, `.footer-nav`, `.footer-contact-row` |
 
-### Multilingual Blog CMS (Feb 2026)
-- MongoDB blog schema supports per-language content (translations field)
-- Backend API accepts `lang` parameter: GET /api/blogs?lang=ar
-- 10 blogs with professionally translated titles, excerpts, and content in AR/ZH/ES
-- Insights page fully translated (title, search, categories, labels)
-- Blog detail page serves language-specific content
-
-### Contact Form (Feb 2026)
-- Functional backend endpoint: POST /api/contact
-- Saves inquiries to MongoDB with timestamp
-- Frontend validation and success/error feedback
-
-## Key API Endpoints
-- GET /api/ - Health check
-- GET /api/blogs?lang=en - List all blog posts (supports: en, ar, zh, es)
-- GET /api/blogs/:slug?lang=ar - Single blog post by slug with language
-- POST /api/contact - Submit contact form
-
-## DB Schema
-- **blogs**: { title, slug, author, published_date, featured_image, content, excerpt, category, read_time, meta_description, keywords[], translations: { ar: {title, excerpt, content, meta_description, keywords}, zh: {...}, es: {...} } }
-- **contacts**: { name, email, phone, company, service_interest, message, submitted_at }
-
-## Pending / Backlog
-### P2
-- Blog post categories translation (categories are still in English)
-- Full SEO audit and lighthouse optimization
-
-### P3
-- Admin panel for blog/contact management
-- Analytics integration
+## Backlog / Future Enhancements
+- **P1**: Language switching functionality (currently UI only — no content translation)
+- **P1**: Update `/insights/*.html` nav/footer to new HTML class structure (currently using CSS aliases)
+- **P2**: SEO audit and Lighthouse performance optimization
+- **P2**: Google Analytics or privacy-first analytics integration
+- **P3**: Admin panel for blog/contact management
+- **P3**: Live contact form submission (EmailJS or Formspree integration)
+- **P3**: Lighthouse score optimization (image lazy loading improvements, critical CSS)
