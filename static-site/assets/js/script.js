@@ -204,7 +204,7 @@ function initBlogFilter() {
 }
 
 /* ============================================
-   7. CONTACT FORM
+   7. CONTACT FORM (Formspree Integration)
    ============================================ */
 function initContactForm() {
   var form = document.getElementById('contact-form');
@@ -213,25 +213,69 @@ function initContactForm() {
   var submitBtn = form.querySelector('.btn-submit');
   var errorBox  = document.getElementById('form-error');
   var successEl = document.getElementById('form-success');
+  var originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit Inquiry';
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
+    
     var name  = form.querySelector('[name="name"]');
     var email = form.querySelector('[name="email"]');
     var msg   = form.querySelector('[name="message"]');
 
+    // Client-side validation
     if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
-      if (errorBox) { errorBox.textContent = 'Please fill in all required fields.'; errorBox.style.display = 'block'; }
+      if (errorBox) { 
+        errorBox.textContent = 'Please fill in all required fields.'; 
+        errorBox.style.display = 'block'; 
+      }
       return;
     }
-    if (errorBox) errorBox.style.display = 'none';
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting\u2026'; }
+    
+    // Email format validation
+    if (!email.value.includes('@') || !email.value.includes('.')) {
+      if (errorBox) { 
+        errorBox.textContent = 'Please enter a valid email address.'; 
+        errorBox.style.display = 'block'; 
+      }
+      return;
+    }
 
-    setTimeout(function () {
-      form.style.display = 'none';
-      if (successEl) successEl.style.display = 'block';
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Inquiry'; }
-    }, 1200);
+    if (errorBox) errorBox.style.display = 'none';
+    if (submitBtn) { 
+      submitBtn.disabled = true; 
+      submitBtn.innerHTML = 'Submitting\u2026 <i class="fas fa-spinner fa-spin"></i>'; 
+    }
+
+    try {
+      var formData = new FormData(form);
+      var response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        if (successEl) successEl.style.display = 'block';
+        form.reset();
+      } else {
+        var data = await response.json();
+        throw new Error(data.error || 'Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form error:', error);
+      if (errorBox) {
+        errorBox.textContent = 'There was an error sending your message. Please try again or contact us directly via WhatsApp.';
+        errorBox.style.display = 'block';
+      }
+    } finally {
+      if (submitBtn) { 
+        submitBtn.disabled = false; 
+        submitBtn.innerHTML = originalBtnText; 
+      }
+    }
   });
 
   var resetBtn = document.getElementById('form-reset');
