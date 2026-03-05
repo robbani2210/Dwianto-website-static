@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initBlogFilter();
   initContactForm();
   initLangSwitcher();
+  initI18n();
   markActiveNavLink();
 });
 
@@ -18,16 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
    ============================================ */
 function initNavigation() {
   var nav    = document.getElementById('site-header');
-  /* article pages have old IDs — fall back gracefully */
-  var toggle = document.getElementById('nav-toggle') || document.getElementById('mob-toggle');
-  var mobile = document.getElementById('nav-mobile') || document.getElementById('mob-menu');
+  var toggle = document.getElementById('nav-toggle');
+  var mobile = document.getElementById('nav-mobile');
 
   if (nav) {
     window.addEventListener('scroll', function () {
       nav.classList.toggle('scrolled', window.scrollY > 50);
-      /* article pages: nav is nested inside header — toggle on inner .site-nav too */
-      var innerNav = nav.tagName === 'HEADER' ? nav.querySelector('.site-nav') : null;
-      if (innerNav) innerNav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
   }
 
@@ -37,7 +34,7 @@ function initNavigation() {
       mobile.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(mobile.classList.contains('open')));
     });
-    mobile.querySelectorAll('a').forEach(function (link) {
+    mobile.querySelectorAll('a:not([data-lang])').forEach(function (link) {
       link.addEventListener('click', function () {
         toggle.classList.remove('open');
         mobile.classList.remove('open');
@@ -249,11 +246,11 @@ function initContactForm() {
 }
 
 /* ============================================
-   8. LANGUAGE SWITCHER
+   8. LANGUAGE SWITCHER (Dropdown)
    ============================================ */
 function initLangSwitcher() {
-  var trigger  = document.querySelector('.nav-lang-btn') || document.querySelector('.lang-btn');
-  var dropdown = document.querySelector('.nav-lang-drop') || document.querySelector('.lang-dropdown');
+  var trigger  = document.querySelector('.nav-lang-btn');
+  var dropdown = document.querySelector('.nav-lang-drop');
   if (!trigger || !dropdown) return;
 
   trigger.addEventListener('click', function (e) {
@@ -264,5 +261,112 @@ function initLangSwitcher() {
   document.addEventListener('click', function () {
     dropdown.classList.remove('open');
     if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  });
+}
+
+/* ============================================
+   9. INTERNATIONALIZATION (i18n)
+   ============================================ */
+var i18nData = {};
+var currentLang = localStorage.getItem('dcaLang') || 'en';
+
+function initI18n() {
+  // Load the current language JSON
+  loadLanguage(currentLang);
+  
+  // Set up language switcher click handlers
+  document.querySelectorAll('[data-lang]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var lang = this.getAttribute('data-lang');
+      if (lang && lang !== currentLang) {
+        setLanguage(lang);
+      }
+      // Close dropdown after selection
+      var dropdown = document.querySelector('.nav-lang-drop');
+      if (dropdown) dropdown.classList.remove('open');
+    });
+  });
+  
+  // Update the active state for language selectors
+  updateLangButtons();
+}
+
+function loadLanguage(lang) {
+  // Determine the correct path based on page location
+  var basePath = window.location.pathname.includes('/insights/') ? '../assets/i18n/' : 'assets/i18n/';
+  var url = basePath + lang + '.json';
+  
+  fetch(url)
+    .then(function (response) {
+      if (!response.ok) throw new Error('Language file not found');
+      return response.json();
+    })
+    .then(function (data) {
+      i18nData = data;
+      applyTranslations();
+    })
+    .catch(function (err) {
+      console.warn('Could not load language file:', err);
+      // Fall back to English if file not found
+      if (lang !== 'en') {
+        loadLanguage('en');
+      }
+    });
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('dcaLang', lang);
+  loadLanguage(lang);
+  updateLangButtons();
+  
+  // Update document direction for RTL languages
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang;
+}
+
+function updateLangButtons() {
+  // Update desktop dropdown button text
+  var langBtn = document.querySelector('.nav-lang-btn');
+  if (langBtn) {
+    var langCode = currentLang.toUpperCase();
+    langBtn.innerHTML = langCode + ' <i class="fas fa-chevron-down fa-xs"></i>';
+  }
+  
+  // Update active state in desktop dropdown
+  document.querySelectorAll('.nav-lang-drop [data-lang]').forEach(function (a) {
+    a.classList.toggle('active', a.getAttribute('data-lang') === currentLang);
+  });
+  
+  // Update active state in mobile language buttons
+  document.querySelectorAll('.nav-mobile-langs [data-lang]').forEach(function (a) {
+    a.classList.toggle('active', a.getAttribute('data-lang') === currentLang);
+  });
+}
+
+function applyTranslations() {
+  // Apply translations to elements with data-i18n attribute
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    if (i18nData[key]) {
+      el.innerHTML = i18nData[key];
+    }
+  });
+  
+  // Apply translations to placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (i18nData[key]) {
+      el.placeholder = i18nData[key];
+    }
+  });
+  
+  // Apply translations to title attributes
+  document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n-title');
+    if (i18nData[key]) {
+      el.title = i18nData[key];
+    }
   });
 }
