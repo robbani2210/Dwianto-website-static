@@ -1,32 +1,82 @@
-# Dwianto Capital Advisory — PRD
+# Dwianto Capital Advisory - Static Website PRD
 
 ## Original Problem Statement
-The user wants to redesign and simplify the existing website into a **premium minimalist company profile website**, outputting pure static HTML, CSS, and Vanilla JavaScript.
+Build a premium, minimalist, static company profile website using only HTML, CSS, and Vanilla JavaScript for Dwianto Capital Advisory - a financial advisory firm specializing in M&A, Capital Structuring, and Cross-Border Transactions in Indonesia.
 
-## Product Requirements
-- **Output**: Static HTML, CSS, and JS only. No frameworks (React, Node.js) or build tools. Must run by opening `index.html`.
-- **Design Style**: Minimalist premium corporate style. Navy + Gold theme. Large whitespace, elegant typography, subtle animations.
-- **Navigation**: Sticky navbar with deep professional blue background and white text. Logo + menu items: Home, About, Services, Portfolio, Insights, Contact. Mobile responsive.
-- **Layout**: Section-based homepage: Hero carousel, Stats bar, Owner Profile, Services preview, Portfolio/Success Stories, Insights preview, CTA, Footer.
-- **Interactivity**: Smooth scroll, fade-in reveal on scroll, animated stat counters, hero carousel, mobile menu, language switcher dropdown, blog filter + search.
-- **Performance & SEO**: Optimized images, lightweight code, mobile-first, semantic HTML, proper heading hierarchy, meta tags.
-- **File Structure**: Clean separation — 6 main pages + `/insights/` blog articles + `/assets/css/`, `/assets/js/`, `/assets/images/`.
+## Core Requirements
+- **Tech Stack:** Pure static HTML5, CSS3, Vanilla JavaScript
+- **Design:** Premium minimalist corporate aesthetic (navy + gold theme)
+- **No Backend:** Must be deployable on any standard hosting without Node.js, build tools, or frameworks
+- **Multi-language:** Support for English (default), Arabic (RTL), Chinese, Spanish
 
-## Architecture
+## User Personas
+1. **Foreign Investors** - Looking for M&A and investment advisory services in Indonesia
+2. **Corporate Executives** - Seeking capital structuring and compliance guidance
+3. **Family Businesses** - Interested in restructuring and governance advisory
 
+---
+
+## What's Been Implemented
+
+### December 2025 - Initial Build
+- Full static site rebuild with premium minimalist design
+- 6 main pages: Home, About, Services, Portfolio, Insights, Contact
+- 6 blog article pages under /insights/
+- Responsive design with mobile navigation
+
+### March 5, 2025 - P1 Tasks Completed
+
+#### 1. Navigation & Footer Structure Refactoring ✅
+- Refactored all 6 blog article pages (`/insights/*.html`) to use consistent HTML structure
+- Navigation uses: `.site-nav`, `.nav-links`, `.nav-lang`, `.nav-lang-btn`, `.nav-lang-drop`
+- Mobile nav uses: `.nav-toggle`, `.nav-mobile`, `.nav-mobile-inner`
+- Footer uses: `.footer-main`, `.footer-desc`, `.footer-col-title`, `.footer-nav`, `.footer-contact-row`
+- Removed CSS aliases from `style.css` that were patching the old structure
+
+#### 2. Functional Language Switching ✅
+- Implemented client-side i18n using JSON translation files
+- Created translation files: `en.json`, `ar.json`, `zh.json`, `es.json`
+- Language persistence via localStorage (`dcaLang` key)
+- RTL support for Arabic (automatically sets `dir="rtl"` on html element)
+- Navigation, page titles, and key UI elements are translatable via `data-i18n` attributes
+
+#### 3. Contact Form Integration ✅
+- Integrated Formspree for form submissions
+- Form endpoint: `https://formspree.io/f/xbljgvgw`
+- Submissions go to: `info@dwiantocapital.com`
+- Client-side validation for required fields and email format
+- AJAX submission with loading state and success/error handling
+- Honeypot field for spam protection
+
+### Testing Status
+- **Testing Agent:** 100% pass rate (14/14 tests)
+- All pages render correctly
+- Language switching works across all languages
+- Mobile responsive design verified
+- Form validation verified
+
+---
+
+## Project Structure
 ```
-/app/static-site/
-├── index.html          # Homepage — Hero + Stats + Owner + Services + Portfolio + Insights + CTA
-├── about.html          # About — Who We Are + Problem/Solution + Vision/Mission + Values
-├── services.html       # Services — M&A + Cross-Border + Legal/Compliance + Why Choose Us
-├── credibility.html    # Portfolio — Stats + 6 Cases + Partners
-├── insights.html       # Blog listing — Filter pills + Search + 6 Blog cards
-├── contact.html        # Contact — Form + Info panel
-└── assets/
-    ├── css/style.css   # 1450+ line comprehensive CSS system (navy/gold, BEM classes)
-    ├── js/script.js    # Navigation, carousel, scroll reveal, stats counter, filter, form, lang switcher
-    └── images/
-└── insights/           # 6 Blog article pages (use CSS backwards-compat aliases)
+/app/frontend/
+├── index.html          # Homepage with hero carousel
+├── about.html          # About page
+├── services.html       # Services page  
+├── credibility.html    # Portfolio/Track record page
+├── insights.html       # Blog listing page
+├── contact.html        # Contact form page
+├── assets/
+│   ├── css/
+│   │   └── style.css   # All styles
+│   ├── js/
+│   │   └── script.js   # Navigation, carousel, i18n, form handling
+│   └── i18n/
+│       ├── en.json     # English translations
+│       ├── ar.json     # Arabic translations (RTL)
+│       ├── zh.json     # Chinese translations
+│       └── es.json     # Spanish translations
+└── insights/
     ├── how-to-structure-pt-pma.html
     ├── ma-due-diligence-southeast-asia.html
     ├── indonesia-investment-outlook-2025.html
@@ -35,48 +85,82 @@ The user wants to redesign and simplify the existing website into a **premium mi
     └── corporate-governance-cross-border-ma.html
 ```
 
-## Tech Stack
-- **HTML5**: Semantic markup, SEO meta tags, JSON-LD schema on homepage
-- **CSS3**: 1450+ lines, CSS variables, BEM class system, CSS Grid + Flexbox, animations
-- **Vanilla JS**: 250+ lines, no dependencies, ES5 compatible
-- **Fonts**: Playfair Display (headings) + Manrope (body) + JetBrains Mono (labels)
-- **Icons**: Font Awesome 6.5.1 CDN
-- **Images**: Unsplash CDN + customer-hosted assets
+---
 
-## What's Been Implemented (Feb 2026)
+## Prioritized Backlog
 
-### Phase 1 — Static Conversion (Superseded)
-- Converted original React/FastAPI app to static HTML
+### P0 - Critical (None)
+All critical features implemented.
 
-### Phase 2 — Golden White Theme (Superseded)
-- Implemented dark gold (#7B5C23) + ivory color scheme
+### P1 - High Priority (Completed)
+- ✅ Clean navigation/footer structure in blog pages
+- ✅ Functional language switching
 
-### Phase 3 — Premium Minimalist Redesign (COMPLETE ✅)
-- **Complete CSS rewrite**: 1450-line design system with navy (#0B1C3E) + gold (#C5A059) palette, CSS variables, BEM-style classes, responsive grid system, reveal animations, hero carousel mechanics
-- **Complete HTML rebuild** of all 6 main pages using new CSS class system
-- **script.js update**: Navigation, hero carousel, scroll reveal, animated stats counters, blog filter + search, contact form validation, language switcher, backwards-compatible fallbacks for blog article pages
-- **CSS backwards-compat aliases**: Old class names aliased in CSS so 6 blog article pages render correctly without HTML changes
-- **100% test pass rate**: All 30+ scenarios tested by testing agent
+### P2 - Medium Priority
+- ✅ Contact form integration (Formspree)
+- ⏳ SEO & Lighthouse optimization
+  - Add meta descriptions to all pages
+  - Review heading hierarchy
+  - Optimize images (lazy loading, WebP format)
+  - Improve Core Web Vitals scores
 
-## CSS Class System (Key Classes)
-| Component | Class |
-|-----------|-------|
-| Navbar | `.site-nav`, `.nav-inner`, `.nav-links`, `.nav-lang`, `.nav-toggle`, `.nav-mobile` |
-| Hero | `.hero`, `.hero__bg`, `.hero__overlay`, `.hero__content`, `.hero__eyebrow`, `.hero__title` |
-| Stats | `.stats-bar`, `.stats-bar__grid`, `.stat-cell`, `.stat-cell__num`, `.stat-cell__label` |
-| Owner | `.owner-section`, `.owner-grid`, `.owner-img-frame`, `.owner-title`, `.cred-item` |
-| Services | `.service-cards`, `.service-card`, `.svc__icon`, `.svc__title`, `.svc__desc` |
-| Portfolio | `.portfolio-grid`, `.portfolio-card`, `.port-badge`, `.port-title`, `.port-footer` |
-| Insights | `.insights-grid`, `.insight-card`, `.blog-grid`, `.blog-card`, `.blog-card__img` |
-| Contact | `.contact-wrap`, `.contact-items`, `.form-box`, `.form-group`, `.form-input` |
-| Animations | `.reveal`, `.reveal.revealed`, `.reveal.from-left`, `.reveal.delay-1` |
-| Footer | `.site-footer`, `.footer-main`, `.footer-col-title`, `.footer-nav`, `.footer-contact-row` |
+### P3 - Nice to Have
+- Add more blog articles
+- Newsletter subscription form
+- Social media sharing buttons on articles
+- Analytics integration (Google Analytics 4)
 
-## Backlog / Future Enhancements
-- **P1**: Language switching functionality (currently UI only — no content translation)
-- **P1**: Update `/insights/*.html` nav/footer to new HTML class structure (currently using CSS aliases)
-- **P2**: SEO audit and Lighthouse performance optimization
-- **P2**: Google Analytics or privacy-first analytics integration
-- **P3**: Admin panel for blog/contact management
-- **P3**: Live contact form submission (EmailJS or Formspree integration)
-- **P3**: Lighthouse score optimization (image lazy loading improvements, critical CSS)
+---
+
+## Technical Notes
+
+### Language Switching Implementation
+```javascript
+// Translation keys format in JSON files:
+{
+  "nav.home": "Home",
+  "nav.about": "About",
+  ...
+}
+
+// HTML usage:
+<a href="index.html" data-i18n="nav.home">Home</a>
+
+// JS applies translations:
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  const key = el.getAttribute('data-i18n');
+  if (i18nData[key]) el.innerHTML = i18nData[key];
+});
+```
+
+### Formspree Integration
+```html
+<form action="https://formspree.io/f/xbljgvgw" method="POST">
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
+  <input type="text" name="_gotcha" style="display:none">
+  <!-- Form fields -->
+</form>
+```
+
+### Static Server
+The site is served using `http-server`:
+```json
+{
+  "scripts": {
+    "start": "http-server . -p 3000 -a 0.0.0.0"
+  }
+}
+```
+
+---
+
+## Deployment Notes
+- Pure static site - can be deployed to any web hosting
+- No backend required
+- Formspree handles contact form submissions
+- **Important:** Verify email address on Formspree account to activate form submissions
+
+---
+
+## Preview URL
+https://clean-business-13.preview.emergentagent.com
