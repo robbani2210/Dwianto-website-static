@@ -20,34 +20,65 @@
 </head>
 <body class="page-article">
 
-  <header class="site-header" id="site-header">
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav" id="site-header" aria-label="Main navigation">
     <div class="container">
-      <nav class="site-nav">
-        <a href="../index.html" class="nav-logo"><img src="https://customer-assets.emergentagent.com/job_0287b672-8f9e-4fe4-bd6c-7155d54ad100/artifacts/lcyh975m_a9c81fbd-2709-459a-a9ba-0226c80d4f25-removebg-preview.png" alt="Dwianto Capital Advisory" width="160" height="56"></a>
-        <div class="nav-links">
-          <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
-          <a href="../credibility.html">Portfolio</a><a href="../insights.html" class="active">Insights</a><a href="../contact.html">Contact</a>
-          <div class="lang-switcher"><button class="lang-btn">&#127468;&#127463; EN &#9662;</button>
-            <div class="lang-dropdown"><a href="#">&#127468;&#127463; English</a><a href="#">&#127462;&#127466; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a><a href="#">&#127464;&#127475; &#20013;&#25991;</a><a href="#">&#127466;&#127480; Espa&#241;ol</a></div>
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo" aria-label="Dwianto Capital Advisory — Home">
+          <img src="https://customer-assets.emergentagent.com/job_0287b672-8f9e-4fe4-bd6c-7155d54ad100/artifacts/lcyh975m_a9c81fbd-2709-459a-a9ba-0226c80d4f25-removebg-preview.png"
+               alt="Dwianto Capital Advisory" height="46">
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="../about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="../services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="../credibility.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="../insights.html" class="active" data-i18n="nav.insights">Insights</a></li>
+          <li><a href="../contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="nav-lang">
+          <button class="nav-lang-btn" aria-haspopup="true" aria-expanded="false">
+            EN <i class="fas fa-chevron-down fa-xs"></i>
+          </button>
+          <div class="nav-lang-drop" role="menu">
+            <a href="#" data-lang="en" role="menuitem">English</a>
+            <a href="#" data-lang="ar" role="menuitem">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+            <a href="#" data-lang="zh" role="menuitem">&#20013;&#25991;</a>
+            <a href="#" data-lang="es" role="menuitem">Espa&#241;ol</a>
           </div>
         </div>
-        <button class="mob-toggle" id="mob-toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
-      </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <div class="mob-menu" id="mob-menu"><div class="container"><div class="mob-menu-inner">
-      <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
-      <a href="../credibility.html">Portfolio</a><a href="../insights.html" class="active">Insights</a><a href="../contact.html">Contact</a>
-      <div class="mob-langs"><a href="#" class="active">EN</a><a href="#">AR</a><a href="#">ZH</a><a href="#">ES</a></div>
-    </div></div></div>
-  </header>
+    <div class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+      <div class="container">
+        <div class="nav-mobile-inner">
+          <a href="../index.html" data-i18n="nav.home">Home</a>
+          <a href="../about.html" data-i18n="nav.about">About</a>
+          <a href="../services.html" data-i18n="nav.services">Services</a>
+          <a href="../credibility.html" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="../insights.html" class="active" data-i18n="nav.insights">Insights</a>
+          <a href="../contact.html" data-i18n="nav.contact">Contact</a>
+          <div class="nav-mobile-langs">
+            <a href="#" data-lang="en" class="active">EN</a>
+            <a href="#" data-lang="ar">AR</a>
+            <a href="#" data-lang="zh">ZH</a>
+            <a href="#" data-lang="es">ES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <main id="main-content">
 
     <header class="art-hero">
       <div class="container">
-        <div class="art-hero-inner">
+        <div class="art-hero__inner">
           <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="../index.html">Home</a><span>/</span><a href="../insights.html">Insights</a><span>/</span><span class="current">M&amp;A Due Diligence</span>
+            <a href="../index.html">Home</a><span>/</span><a href="../insights.html">Insights</a><span>/</span><span class="bc-current">M&amp;A Due Diligence</span>
           </nav>
           <span class="art-cat-badge">M&amp;A</span>
           <h1 class="art-h1">M&amp;A Due Diligence in Southeast Asia: What Foreign Investors Need to Know</h1>
@@ -64,9 +95,9 @@
       <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920" alt="City skyline representing cross-border M&A in Southeast Asia" loading="eager">
     </div>
 
-    <section class="art-section">
+    <section class="art-content">
       <div class="container">
-        <div class="art-wrap">
+        <div class="art-layout">
           <article class="art-body">
 
             <p>Completing an M&amp;A transaction in Southeast Asia — and specifically in Indonesia — requires a materially different due diligence approach from what foreign investors may be accustomed to in North America or Europe. Regulatory complexity, documentation standards, governance gaps, and cultural dynamics introduce risks that a standard due diligence checklist will fail to surface. This article addresses the areas that matter most.</p>
@@ -136,70 +167,107 @@
             <p>A well-structured DD process for a mid-market Indonesian acquisition typically takes 6–12 weeks from data room access to completion reports. Allow additional time for regulatory filings, which can take 2–6 months depending on the sector and the number of regulatory bodies involved.</p>
 
             <h2>Conclusion</h2>
-            <p>M&amp;A due diligence in Indonesia demands local expertise, attention to detail, and a systematic process that goes beyond standard international templates. The most successful acquirers invest in thorough pre-signing DD — and engage advisors with the track record to deliver it. Dwianto Capital Advisory provides integrated buy-side advisory services including DD coordination, vendor management, and regulatory navigation. <a href="../contact.html" style="color:var(--secondary);">Contact our team</a> to discuss your acquisition.</p>
+            <p>M&amp;A due diligence in Indonesia demands local expertise, attention to detail, and a systematic process that goes beyond standard international templates. The most successful acquirers invest in thorough pre-signing DD — and engage advisors with the track record to deliver it. Dwianto Capital Advisory provides integrated buy-side advisory services including DD coordination, vendor management, and regulatory navigation. <a href="../contact.html" style="color:var(--gold);">Contact our team</a> to discuss your acquisition.</p>
 
           </article>
 
           <aside class="art-sidebar">
-            <div class="author-box">
-              <p class="author-box-lbl">About the Author</p>
-              <p class="author-box-name">Ijlal Falih Dwianto</p>
-              <p class="author-box-role">Managing Partner, Dwianto Capital Advisory</p>
-              <p class="author-box-bio">M&amp;A and private equity specialist with cross-border transaction experience across international legal offices and globally exposed family businesses.</p>
+            <div class="sidebar-author">
+              <span class="sidebar-author__label">About the Author</span>
+              <p class="sidebar-author__name">Ijlal Falih Dwianto</p>
+              <p class="sidebar-author__role">Managing Partner, Dwianto Capital Advisory</p>
+              <p class="sidebar-author__bio">M&amp;A and private equity specialist with cross-border transaction experience across international legal offices and globally exposed family businesses.</p>
             </div>
             <div class="sidebar-cta">
               <h3>Planning an Acquisition?</h3>
               <p>We provide integrated buy-side M&amp;A advisory including due diligence coordination and regulatory navigation.</p>
-              <a href="../contact.html" class="btn btn-gold">Request Consultation</a>
+              <a href="../contact.html" class="btn btn--gold">Request Consultation</a>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="related-section">
+    <section class="related-articles">
       <div class="container">
-        <h2 class="section-title" style="margin-bottom:0;">Related Articles</h2>
+        <h2 class="heading" style="margin-bottom:0;">Related Articles</h2>
         <div class="related-grid">
-          <a href="corporate-governance-cross-border-ma.html" class="blog-card" style="text-decoration:none;">
-            <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Corporate governance" loading="lazy"></div>
-            <div class="blog-card-body"><div class="blog-card-meta"><span class="blog-cat">M&amp;A</span></div><h3 class="blog-title">Corporate Governance Best Practices in Cross-Border M&amp;A</h3></div>
+          <a href="corporate-governance-cross-border-ma.html" class="insight-card" style="text-decoration:none;">
+            <div class="insight-card__img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Corporate governance" loading="lazy"></div>
+            <p class="insight-card__cat">M&amp;A</p>
+            <h3 class="insight-card__title">Corporate Governance Best Practices in Cross-Border M&amp;A</h3>
           </a>
-          <a href="legal-compliance-foreign-companies-indonesia.html" class="blog-card" style="text-decoration:none;">
-            <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&q=80" alt="Legal compliance" loading="lazy"></div>
-            <div class="blog-card-body"><div class="blog-card-meta"><span class="blog-cat">Legal &amp; Compliance</span></div><h3 class="blog-title">Legal &amp; Financial Compliance for Foreign-Owned Companies</h3></div>
+          <a href="legal-compliance-foreign-companies-indonesia.html" class="insight-card" style="text-decoration:none;">
+            <div class="insight-card__img"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&q=80" alt="Legal compliance" loading="lazy"></div>
+            <p class="insight-card__cat">Legal &amp; Compliance</p>
+            <h3 class="insight-card__title">Legal &amp; Financial Compliance for Foreign-Owned Companies</h3>
           </a>
-          <a href="how-to-structure-pt-pma.html" class="blog-card" style="text-decoration:none;">
-            <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="PT PMA" loading="lazy"></div>
-            <div class="blog-card-body"><div class="blog-card-meta"><span class="blog-cat">Cross-Border Investment</span></div><h3 class="blog-title">How to Structure a PT PMA for Foreign Direct Investment</h3></div>
+          <a href="how-to-structure-pt-pma.html" class="insight-card" style="text-decoration:none;">
+            <div class="insight-card__img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="PT PMA" loading="lazy"></div>
+            <p class="insight-card__cat">Cross-Border Investment</p>
+            <h3 class="insight-card__title">How to Structure a PT PMA for Foreign Direct Investment</h3>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section cta-section">
-      <div class="container"><div style="max-width:700px;margin:0 auto;text-align:center;">
-        <h2 class="section-title on-dark">Discuss Your M&amp;A Transaction</h2>
-        <p class="section-desc on-dark" style="margin:0 auto 2.5rem;">Get expert advisory on your acquisition, from target identification through post-closing integration.</p>
-        <a href="../contact.html" class="btn btn-gold">Schedule Consultation</a>
-      </div></div>
+    <section class="cta-banner">
+      <div class="container">
+        <div class="reveal text-center" style="max-width:700px;margin:0 auto;">
+          <h2 class="heading heading--light">Discuss Your M&amp;A Transaction</h2>
+          <p class="desc desc--light" style="margin:0 auto 2.5rem;">Get expert advisory on your acquisition, from target identification through post-closing integration.</p>
+          <a href="../contact.html" class="btn btn--gold">Schedule Consultation</a>
+        </div>
+      </div>
     </section>
+
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <div class="footer-grid">
-        <div><p class="footer-brand">Dwianto Capital Advisory</p><p class="footer-tagline">Strategic Advisory in M&amp;A, Capital Structuring, and Cross-Border Transactions</p><p class="footer-legal">PT Dwianto Capital Advisory</p></div>
-        <div><p class="footer-col-h">Quick Links</p><ul class="footer-links"><li><a href="../about.html">About</a></li><li><a href="../services.html">Services</a></li><li><a href="../credibility.html">Portfolio</a></li><li><a href="../insights.html">Insights</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
-        <div><p class="footer-col-h">Contact</p>
-          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@dwiantocapital.com">info@dwiantocapital.com</a></div>
-          <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/6285179587928">+62 851-7958-7928</a></div>
-          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Menara Prima, South Jakarta, Indonesia</span></div>
+      <div class="footer-main">
+        <div>
+          <p class="footer-brand">Dwianto Capital Advisory</p>
+          <p class="footer-desc">Strategic Advisory in M&amp;A, Capital Structuring, and Cross-Border Transactions</p>
+          <p class="footer-legal">PT Dwianto Capital Advisory</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Quick Links</p>
+          <ul class="footer-nav" role="list">
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../credibility.html">Portfolio</a></li>
+            <li><a href="../insights.html">Insights</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-row">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:info@dwiantocapital.com">info@dwiantocapital.com</a>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <a href="https://wa.me/6285179587928" target="_blank" rel="noopener noreferrer">+62 851-7958-7928</a>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Menara Prima, South Jakarta, Indonesia</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom"><p class="footer-copy">&copy; <span id="year"></span> PT Dwianto Capital Advisory. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year"></span> PT Dwianto Capital Advisory. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/6285179587928" class="footer-social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
+
   <script src="../assets/js/script.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
