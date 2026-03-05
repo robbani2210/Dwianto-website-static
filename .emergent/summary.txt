@@ -1,0 +1,116 @@
+<analysis>**original_problem_statement:**
+The user wants to build a premium, minimalist, static company profile website using only HTML, CSS, and Vanilla JavaScript.
+
+**PRODUCT REQUIREMENTS:**
+The most recent set of requirements from the user are:
+1.  **(P1) Clean Navigation & Footer Structure:** Rewrite the  navigation and footer to use the same class structure as the main pages. Avoid CSS aliases so that all pages share a consistent HTML structure.
+2.  **(P1) Functional Language Switching:** Implement real language switching for the main pages and blog excerpts using a lightweight approach (JSON or simple JS). Supported languages: English (default), Arabic, Chinese, Spanish.
+3.  **(P2) Contact Form Integration:** Integrate a working contact form using Formspree or EmailJS.
+4.  **(P2) SEO Optimization:** Perform basic SEO and Lighthouse optimizations (meta tags, headings, performance).
+5.  **Core Constraint:** The website must remain a clean, pure static site deployable on any standard hosting without Node.js, build tools, or backend frameworks.
+
+**User's preferred language**: English
+
+**what currently exists?**
+A fully rebuilt static website with a premium minimalist corporate design. It consists of 6 main pages (, , etc.) and 6 blog article pages (). The main pages have a consistent HTML structure. The blog article pages currently use an older HTML structure for the navigation and footer, with temporary CSS aliases in  to make them look consistent. The agent has just created empty JSON files (, , etc.) in preparation for the language switching task.
+
+**Last working item**:
+    - Last item agent was working: The agent was planning the implementation for the user's new prioritized tasks. It began by investigating the structure of the blog article pages to prepare for the P1 task of refactoring their navigation and footers. The very last action was creating empty JSON files for the language switching feature.
+    - Status: IN PROGRESS
+    - Agent Testing Done: N
+    - Which testing method agent to use? frontend testing agent
+    - User Testing Done: N
+
+**All Pending/In progress Issue list**:
+  There are no bugs. The pending work consists of feature requests and refactoring tasks.
+
+**In progress Task List**:
+  - Task 1: **(P1) Clean Navigation & Footer Structure in Blog Pages**
+     - Where to resume: The agent has already investigated the HTML structure of the blog pages. The next step is to create a script or use  to update the nav and footer HTML in all 6 files under  to match the structure of . Afterwards, the temporary CSS aliases should be removed from .
+     - What will be achieved with this? A consistent and maintainable HTML structure across all pages of the website, removing technical debt.
+     - Status:  IN PROGRESS
+     - Should Test frontend/backend/both after fix? Frontend
+     - Blocked on something: No
+
+  - Task 2: **(P1) Implement Functional Language Switching**
+     - Where to resume: Empty JSON files have been created at . The next steps are: 1. Populate the JSON files with translated strings for all content. 2. Update  to read from the appropriate JSON file based on user selection, and dynamically update the text content (page content, blog titles/excerpts) on the page. 3. Ensure the language selector dropdown in the navigation is functional.
+     - What will be achieved with this? A multi-lingual website supporting English, Arabic, Chinese, and Spanish.
+     - Status:  NOT STARTED
+     - Should Test frontend/backend/both after fix? Frontend
+     - Blocked on something: No
+
+**Upcoming and Future Tasks**
+*   **(P2) Contact Form Integration:** Integrate Formspree or EmailJS into  to create a functional contact form that sends submissions to an email address.
+*   **(P2) SEO Optimization:** Review and optimize all pages for basic SEO (meta titles/descriptions, heading hierarchy) and performance (Core Web Vitals).
+
+**Completed work in this session**
+- **Full Static Site Rebuild:** Completely rebuilt the website into a static HTML/CSS/JS project with a new premium minimalist design, per user's pivot.
+- **Styling and Consistency Fixes:** Aligned styling across all main pages and created temporary CSS aliases to fix the appearance of blog article pages.
+- **Comprehensive Testing:** Successfully ran a full suite of 30+ tests using the testing agent to verify functionality, layout, and responsiveness across the site.
+- **PRD Update:** Updated the  file to reflect the completed work.
+
+**Earlier issues found/mentioned but not fixed**
+*   None.
+
+**Known issue recurrence from previous fork**
+*   N/A
+
+**Code Architecture**
+
+
+**Key Technical Concepts**
+*   **Tech Stack:** Static HTML5, CSS3, Vanilla JavaScript.
+*   **Design:** Premium minimalist corporate aesthetic (navy + gold theme), large whitespace, clean typography, subtle animations.
+*   **Internationalization (i18n):** A lightweight, client-side approach using JSON files and Vanilla JS for language switching.
+
+**key DB schema**
+*   N/A
+
+**changes in tech stack**
+*   The project was pivoted from a full-stack React/FastAPI/MongoDB application to a pure static HTML/CSS/JS website. This context is critical.
+
+**All files of reference**
+*    (and all other root  pages)
+*    (all 6 article pages)
+*    (Contains main styles and temporary aliases to be removed)
+*    (Handles interactivity like navbar, counters, and will handle i18n)
+*    (Newly created files for translations)
+
+**Areas that need refactoring**:
+*   The navigation and footer sections of all 6 files in  need to be refactored to use the same HTML structure as the main pages. The corresponding CSS aliases in  must then be deleted.
+
+**key api endpoints**
+*   N/A (A Formspree endpoint will be added later for the contact form).
+
+**Critical Info for New Agent**
+*   **PRIORITY:** The user has provided a clear, prioritized task list. Start with the P1 tasks: refactoring the blog pages' HTML, then implementing language switching.
+*   **STATIC SITE ONLY:** Do not introduce any backend, Node.js, build tools, or frameworks. The site must run by opening .
+*   **Refactoring Goal:** The immediate goal is to remove the temporary CSS aliases by standardizing the nav/footer HTML across all blog pages. This will improve maintainability.
+*   **i18n Implementation:** The language switching should be a lightweight, client-side solution using the JSON files already created in .
+
+**documents and test reports created in this job**
+*   
+*   
+
+**Last 10 User Messages and any pending HUMAN messages**
+- **User:** Provided detailed guidelines for a full HTML rebuild, emphasizing a pure static site, clean file structure, and specific design principles. (Status: **Completed**)
+- **User:** Provided the final list of prioritized tasks: P1 (Refactor blog page HTML, Implement i18n) and P2 (Contact Form, SEO). This is the current work plan. (Status: **In Progress**)
+
+**Project Health Check:**
+*   **Broken:** None
+*   **Mocked:** The language selector and contact form are currently non-functional placeholders.
+
+**3rd Party Integrations**
+*   **Formspree / EmailJS:** Planned for contact form integration (Task P2).
+
+**Testing status**
+  - Testing agent used after significant changes: YES (after the major rebuild)
+  - Troubleshoot agent used after agent stuck in loop: NO
+  - Test files created: None
+  - Known regressions: None
+
+**Credentials to test flow:**
+*   N/A
+
+**What agent forgot to execute**
+*   The agent has not forgotten any tasks. It is currently in the planning and initial execution phase of the user's latest set of requests.</analysis>
